@@ -98,8 +98,8 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
       featured: data.featured || false,
       readingTime,
       author: data.author || {
-        name: 'Shahjalal Shanto',
-        email: 'shahjalal.shanto@gmail.com',
+        name: 'SHAH MD. JALAL UDDIN',
+        email: 'Shahjalal2313@gmail.com',
       },
     };
   } catch {

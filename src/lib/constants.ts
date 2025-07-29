@@ -1,13 +1,13 @@
 // Constants for Shahjalal Shanto Website
 
 export const SITE_CONFIG = {
-  name: 'Shahjalal Shanto',
-  title: 'Shahjalal Shanto - Software Engineer & Academic',
+  name: 'SHAH MD. JALAL UDDIN',
+  title: 'SHAH MD. JALAL UDDIN - Computational Chemistry Researcher',
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Professional academic portfolio showcasing technical expertise and innovative project development.',
-  url: 'https://shahjalal-shanto.com', // Update with actual domain
-  email: 'contact@shahjalal-shanto.com', // Update with actual email
-  author: 'Shahjalal Shanto',
+    'Graduate student in computational chemistry specializing in molecular modeling, web applications, and scientific computing.',
+  url: 'https://shahjalal-shanto.com',
+  email: 'Shahjalal2313@gmail.com',
+  author: 'SHAH MD. JALAL UDDIN',
 } as const;
 
 export const NAVIGATION_ITEMS = [
@@ -32,7 +32,7 @@ export const SOCIAL_LINKS = [
   },
   {
     platform: 'Email',
-    url: 'mailto:contact@shahjalal-shanto.com', // Update with actual email
+    url: 'mailto:Shahjalal2313@gmail.com',
     icon: 'email',
   },
 ] as const;
