@@ -1,0 +1,393 @@
+---
+title: "Building Professional Academic Websites with Next.js and TypeScript"
+excerpt: "A comprehensive guide to creating modern, performant academic websites using Next.js, TypeScript, and Tailwind CSS for graduate school applications and research presentation."
+publishedAt: "2024-11-28"
+updatedAt: "2024-11-28"
+tags: ["Next.js", "TypeScript", "Academic Portfolio", "Web Development", "SEO"]
+featured: true
+author:
+  name: "Shahjalal Shanto"
+  email: "shahjalal.shanto@gmail.com"
+---
+
+# Building Professional Academic Websites with Next.js and TypeScript
+
+Creating a professional academic website is crucial for graduate school applications, research collaboration, and career development. In this comprehensive guide, I'll walk through the process of building a modern, performant academic website using Next.js, TypeScript, and Tailwind CSS.
+
+## Why Choose Next.js for Academic Websites?
+
+### Performance and SEO Benefits
+- **Server-Side Rendering (SSR)**: Improved search engine visibility
+- **Static Site Generation (SSG)**: Fast loading times for research content
+- **Automatic Code Splitting**: Optimized bundle sizes
+- **Built-in Image Optimization**: Faster loading of research images and figures
+
+### Developer Experience
+- **TypeScript Integration**: Type safety for complex academic data structures
+- **Hot Reloading**: Rapid development and content updates
+- **Modern React Features**: Component-based architecture for reusable sections
+- **Vercel Deployment**: Seamless hosting with global CDN
+
+## Project Structure for Academic Websites
+
+```
+academic-website/
+├── src/
+│   ├── app/
+│   │   ├── about/          # Academic background and CV
+│   │   ├── projects/       # Research projects showcase
+│   │   ├── publications/   # Academic publications
+│   │   ├── blog/          # Technical writing and insights
+│   │   └── contact/       # Professional contact information
+│   ├── components/
+│   │   ├── common/        # Reusable UI components
+│   │   ├── layout/        # Header, footer, navigation
+│   │   └── academic/      # Academic-specific components
+│   ├── data/
+│   │   ├── publications.ts
+│   │   ├── projects.ts
+│   │   └── experience.ts
+│   └── types/
+│       └── academic.ts    # TypeScript definitions
+```
+
+## Essential Components for Academic Websites
+
+### 1. About Page - Academic Profile
+
+The about page serves as your primary academic introduction:
+
+```typescript
+interface AcademicProfile {
+  name: string;
+  title: string;
+  affiliation: string;
+  researchInterests: string[];
+  education: Education[];
+  experience: Experience[];
+  skills: TechnicalSkill[];
+}
+
+interface Education {
+  degree: string;
+  institution: string;
+  year: string;
+  gpa?: string;
+  thesis?: string;
+  advisor?: string;
+}
+```
+
+### 2. Projects Showcase
+
+Highlight your research and technical projects:
+
+```typescript
+interface Project {
+  id: string;
+  title: string;
+  description: string;
+  technologies: string[];
+  category: 'Research' | 'Software' | 'Analysis';
+  status: 'Completed' | 'Ongoing' | 'Published';
+  links: {
+    github?: string;
+    demo?: string;
+    paper?: string;
+    poster?: string;
+  };
+  impact: {
+    citations?: number;
+    users?: number;
+    downloads?: number;
+  };
+}
+```
+
+### 3. Publications Management
+
+Structured approach to academic publications:
+
+```typescript
+interface Publication {
+  id: string;
+  title: string;
+  authors: string[];
+  journal: string;
+  year: number;
+  volume?: string;
+  pages?: string;
+  doi?: string;
+  abstract: string;
+  keywords: string[];
+  type: 'Journal' | 'Conference' | 'Preprint' | 'Thesis';
+  citations: number;
+}
+```
+
+## SEO Optimization for Academic Visibility
+
+### Metadata Configuration
+
+```typescript
+// app/layout.tsx
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Shahjalal Shanto - Computational Chemistry Researcher',
+    default: 'Shahjalal Shanto - Computational Chemistry Researcher',
+  },
+  description: 'Graduate student in computational chemistry specializing in molecular modeling, web applications, and scientific computing.',
+  keywords: [
+    'computational chemistry',
+    'molecular modeling',
+    'graduate student',
+    'research',
+    'scientific computing',
+    'web applications'
+  ],
+  authors: [{ name: 'Shahjalal Shanto' }],
+  creator: 'Shahjalal Shanto',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://shahjalal-shanto.com',
+    siteName: 'Shahjalal Shanto',
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
+};
+```
+
+### Structured Data for Academic Content
+
+```typescript
+// components/StructuredData.tsx
+export function AcademicStructuredData({ profile }: { profile: AcademicProfile }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": profile.name,
+    "jobTitle": profile.title,
+    "affiliation": {
+      "@type": "Organization",
+      "name": profile.affiliation
+    },
+    "knowsAbout": profile.researchInterests,
+    "url": "https://shahjalal-shanto.com",
+    "sameAs": [
+      "https://github.com/shahjalal-shanto",
+      "https://linkedin.com/in/shahjalal-shanto"
+    ]
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
+  );
+}
+```
+
+## Performance Optimization Strategies
+
+### Image Optimization for Research Content
+
+```typescript
+// components/OptimizedImage.tsx
+import Image from 'next/image';
+
+interface ResearchImageProps {
+  src: string;
+  alt: string;
+  caption?: string;
+  priority?: boolean;
+}
+
+export function ResearchImage({ src, alt, caption, priority }: ResearchImageProps) {
+  return (
+    <figure className="my-8">
+      <Image
+        src={src}
+        alt={alt}
+        width={800}
+        height={600}
+        priority={priority}
+        className="rounded-lg shadow-lg"
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD..."
+      />
+      {caption && (
+        <figcaption className="text-sm text-gray-600 mt-2 text-center">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+```
+
+### Dynamic Imports for Complex Components
+
+```typescript
+// components/InteractiveMolecule.tsx
+import dynamic from 'next/dynamic';
+
+const MoleculeViewer = dynamic(
+  () => import('./MoleculeViewer'),
+  {
+    loading: () => <p>Loading molecular visualization...</p>,
+    ssr: false
+  }
+);
+
+export default function InteractiveMolecule({ smiles }: { smiles: string }) {
+  return (
+    <div className="w-full h-96 border rounded-lg">
+      <MoleculeViewer smiles={smiles} />
+    </div>
+  );
+}
+```
+
+## Content Management Strategy
+
+### MDX Integration for Technical Writing
+
+```typescript
+// next.config.js
+const withMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm, remarkMath],
+    rehypePlugins: [rehypeKatex, rehypeHighlight],
+  },
+});
+
+module.exports = withMDX({
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+});
+```
+
+### Dynamic Content Loading
+
+```typescript
+// utils/content.ts
+export async function getPublications(): Promise<Publication[]> {
+  // In production, this might fetch from a CMS or database
+  const publicationsData = await import('../data/publications.json');
+  return publicationsData.default.sort((a, b) => b.year - a.year);
+}
+
+export async function getProjects(): Promise<Project[]> {
+  const projectsData = await import('../data/projects.json');
+  return projectsData.default.filter(project => project.status !== 'Draft');
+}
+```
+
+## Deployment and Production Considerations
+
+### Vercel Configuration
+
+```json
+// vercel.json
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Analytics and Monitoring
+
+```typescript
+// components/Analytics.tsx
+import { GoogleAnalytics } from '@next/third-parties/google';
+
+export function Analytics() {
+  return process.env.NODE_ENV === 'production' ? (
+    <GoogleAnalytics gaId="GA_MEASUREMENT_ID" />
+  ) : null;
+}
+```
+
+## Accessibility and Responsive Design
+
+### Responsive Academic Components
+
+```typescript
+// components/ResponsiveTable.tsx
+export function PublicationTable({ publications }: { publications: Publication[] }) {
+  return (
+    <div className="overflow-x-auto">
+      <table className="min-w-full divide-y divide-gray-200">
+        <thead className="bg-gray-50">
+          <tr>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Title
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Journal
+            </th>
+            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Year
+            </th>
+          </tr>
+        </thead>
+        <tbody className="bg-white divide-y divide-gray-200">
+          {publications.map((pub) => (
+            <tr key={pub.id} className="hover:bg-gray-50">
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                {pub.title}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {pub.journal}
+              </td>
+              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                {pub.year}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+```
+
+## Conclusion
+
+Building a professional academic website with Next.js and TypeScript provides:
+
+1. **Performance**: Fast loading times crucial for academic visibility
+2. **SEO**: Better search engine ranking for research discovery
+3. **Maintainability**: Type-safe code for long-term content management
+4. **Scalability**: Easy expansion as research portfolio grows
+5. **Professional Appearance**: Modern design suitable for academic institutions
+
+This technology stack has proven invaluable for my graduate school applications and research collaboration, providing a platform that grows with my academic career.
+
+---
+
+*For implementation details and code examples, visit my [GitHub repository](https://github.com/shahjalal-shanto) or explore the live implementation of these concepts on this website.*
