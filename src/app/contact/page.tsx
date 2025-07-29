@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import SocialLinks from '@/components/common/SocialLinks';
 import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants';
 
 export default function ContactPage() {
@@ -33,9 +35,25 @@ export default function ContactPage() {
     setSubmitStatus('idle');
 
     try {
-      // TODO: Replace with actual form submission logic
-      // For now, simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // EmailJS configuration - replace with your actual service details
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'your_service_id';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'your_template_id';
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'your_public_key';
+
+      // Prepare template parameters for EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        organization: formData.organization,
+        inquiry_type: formData.inquiryType,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'Shahjalal2313@gmail.com',
+        reply_to: formData.email,
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
       setSubmitStatus('success');
       setFormData({ name: '', email: '', organization: '', inquiryType: '', subject: '', message: '' });
@@ -226,23 +244,9 @@ export default function ContactPage() {
             {/* Social Links */}
             <div>
               <h3 className="text-lg font-medium text-gray-900 mb-4">
-                Social Media
+                Connect & Follow
               </h3>
-              <div className="space-y-3">
-                {SOCIAL_LINKS.map((link) => (
-                  <a
-                    key={link.platform}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center text-gray-600 hover:text-blue-600 transition-colors"
-                  >
-                    {/* Icon placeholder - will be replaced with proper icons */}
-                    <div className="w-5 h-5 bg-gray-400 rounded mr-3"></div>
-                    <span>{link.platform}</span>
-                  </a>
-                ))}
-              </div>
+              <SocialLinks layout="vertical" showDescriptions={true} />
             </div>
 
             {/* Response Time */}

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import GitHubRepos from '@/components/common/GitHubRepos';
 import { EXTERNAL_PROJECTS } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -177,6 +178,14 @@ export default function ProjectsPage() {
           </div>
         </section>
       )}
+
+      {/* GitHub Repositories */}
+      <section className="mt-16">
+        <h2 className="text-2xl font-semibold text-gray-900 mb-8">
+          Open Source Contributions
+        </h2>
+        <GitHubRepos username="shahjalal-shanto" maxRepos={6} />
+      </section>
 
       {/* Call to Action */}
       <div className="text-center mt-16 p-8 bg-gray-50 rounded-lg">
