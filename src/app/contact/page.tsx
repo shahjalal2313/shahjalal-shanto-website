@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import SocialLinks from '@/components/common/SocialLinks';
-import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants';
+import { SITE_CONFIG } from '@/lib/constants';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
