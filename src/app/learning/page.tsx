@@ -20,7 +20,6 @@ const learningCategories = [
         skills: ['Statistical Analysis', 'Hypothesis Testing', 'Probability Distributions', 'Statistical Inference', 'Python Statistics', 'Descriptive Statistics', 'Sampling Methods', 'Confidence Intervals'],
         certificateUrl: null,
         courseUrl: 'https://www.coursera.org/learn/the-power-of-statistics',
-        courseUrl: 'https://www.coursera.org/learn/the-power-of-statistics',
       },
       {
         title: 'The Ultimate Pandas Bootcamp: Advanced Python Data Analysis',
@@ -30,7 +29,6 @@ const learningCategories = [
         description: 'A deep dive into the world of data analysis with Python\'s most powerful library. This comprehensive course took me through everything from basic data structures to advanced analytical techniques, real-world data cleaning challenges, and creating meaningful visualizations that tell compelling stories.',
         skills: ['Advanced Pandas', 'Data Manipulation', 'Data Cleaning', 'Statistical Analysis', 'Data Visualization', 'Python Data Science'],
         certificateUrl: 'https://www.udemy.com/certificate/UC-5eb9b10c-9263-4287-b709-5c2255750896/',
-        courseUrl: 'https://www.udemy.com/course/the-ultimate-pandas-bootcamp-advanced-python-data-analysis/',
         courseUrl: 'https://www.udemy.com/course/the-ultimate-pandas-bootcamp-advanced-python-data-analysis/',
       },
     ],
