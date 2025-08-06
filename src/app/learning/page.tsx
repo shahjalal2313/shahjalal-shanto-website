@@ -19,6 +19,8 @@ const learningCategories = [
         description: 'Comprehensive exploration of statistical concepts essential for data analysis. This course strengthened my foundation in probability distributions, hypothesis testing, and statistical inference while providing hands-on experience with Python for statistical analysis. The practical approach helped me understand how statistics drive data-driven decision making in real-world scenarios.',
         skills: ['Statistical Analysis', 'Hypothesis Testing', 'Probability Distributions', 'Statistical Inference', 'Python Statistics', 'Descriptive Statistics', 'Sampling Methods', 'Confidence Intervals'],
         certificateUrl: null,
+        courseUrl: 'https://www.coursera.org/learn/the-power-of-statistics',
+        courseUrl: 'https://www.coursera.org/learn/the-power-of-statistics',
       },
       {
         title: 'The Ultimate Pandas Bootcamp: Advanced Python Data Analysis',
@@ -28,6 +30,8 @@ const learningCategories = [
         description: 'A deep dive into the world of data analysis with Python\'s most powerful library. This comprehensive course took me through everything from basic data structures to advanced analytical techniques, real-world data cleaning challenges, and creating meaningful visualizations that tell compelling stories.',
         skills: ['Advanced Pandas', 'Data Manipulation', 'Data Cleaning', 'Statistical Analysis', 'Data Visualization', 'Python Data Science'],
         certificateUrl: 'https://www.udemy.com/certificate/UC-5eb9b10c-9263-4287-b709-5c2255750896/',
+        courseUrl: 'https://www.udemy.com/course/the-ultimate-pandas-bootcamp-advanced-python-data-analysis/',
+        courseUrl: 'https://www.udemy.com/course/the-ultimate-pandas-bootcamp-advanced-python-data-analysis/',
       },
     ],
   },
@@ -128,30 +132,60 @@ export default function LearningJourneyPage() {
                     </div>
                   </div>
 
-                  {/* Certificate Link */}
-                  {course.certificateUrl && (
+                  {/* Course and Certificate Links */}
+                  {(course.courseUrl || course.certificateUrl) && (
                     <div className="pt-4 border-t border-gray-100">
-                      <a
-                        href={course.certificateUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm"
-                      >
-                        View Certificate
-                        <svg
-                          className="ml-2 w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
-                        </svg>
-                      </a>
+                      <div className="flex flex-wrap gap-3">
+                        {/* View Course Button */}
+                        {course.courseUrl && (
+                          <a
+                            href={course.courseUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-4 py-2 border border-blue-600 text-blue-600 rounded-md hover:bg-blue-50 transition-colors text-sm"
+                          >
+                            View Course
+                            <svg
+                              className="ml-2 w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                              />
+                            </svg>
+                          </a>
+                        )}
+                        
+                        {/* View Certificate Button */}
+                        {course.certificateUrl && (
+                          <a
+                            href={course.certificateUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors text-sm"
+                          >
+                            View Certificate
+                            <svg
+                              className="ml-2 w-4 h-4"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                              />
+                            </svg>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
