@@ -9,38 +9,6 @@ export const metadata: Metadata = {
 // Learning categories and achievements
 const learningCategories = [
   {
-    category: 'Computational Chemistry & Scientific Computing',
-    courses: [
-      {
-        title: 'Advanced Quantum Chemistry Computational Methods',
-        provider: 'Coursera (University of Colorado Boulder)',
-        status: 'In Progress',
-        completionDate: 'Expected: December 2025',
-        description: 'Comprehensive course covering DFT, ab initio methods, and molecular dynamics simulations with hands-on Python implementations.',
-        skills: ['Density Functional Theory', 'Ab Initio Methods', 'Molecular Dynamics', 'Python Scientific Computing'],
-        certificateUrl: null, // Will be added when completed
-      },
-      {
-        title: 'Machine Learning for Scientific Computing',
-        provider: 'edX (MIT)',
-        status: 'Completed',
-        completionDate: 'September 2025',
-        description: 'Applied machine learning techniques to scientific data analysis, molecular property prediction, and computational optimization.',
-        skills: ['Scientific ML', 'Feature Engineering', 'Model Validation', 'Scientific Data Analysis'],
-        certificateUrl: '#', // Placeholder for actual certificate
-      },
-      {
-        title: 'Chemical Informatics and SMILES Analysis',
-        provider: 'Udemy',
-        status: 'Completed',
-        completionDate: 'August 2025',
-        description: 'Specialized training in chemical informatics, SMILES notation processing, and molecular descriptor calculation using RDKit.',
-        skills: ['Chemical Informatics', 'SMILES Processing', 'RDKit', 'Molecular Descriptors'],
-        certificateUrl: '#', // Placeholder for actual certificate
-      },
-    ],
-  },
-  {
     category: 'Data Science & Analytics',
     courses: [
       {
@@ -54,61 +22,15 @@ const learningCategories = [
       },
     ],
   },
-  {
-    category: 'Programming & Software Development',
-    courses: [
-      {
-        title: 'Advanced Python for Scientific Computing',
-        provider: 'Coursera (University of Michigan)',
-        status: 'Completed',
-        completionDate: 'July 2025',
-        description: 'Advanced Python programming techniques focusing on NumPy, SciPy, Pandas, and scientific visualization libraries.',
-        skills: ['Advanced Python', 'NumPy/SciPy', 'Scientific Visualization', 'Performance Optimization'],
-        certificateUrl: '#', // Placeholder for actual certificate
-      },
-      {
-        title: 'Full Stack Web Development with Next.js',
-        provider: 'Udemy',
-        status: 'Completed',
-        completionDate: 'June 2025',
-        description: 'Comprehensive web development training covering React, Next.js, TypeScript, and modern deployment practices.',
-        skills: ['Next.js', 'React', 'TypeScript', 'Web Development'],
-        certificateUrl: '#', // Placeholder for actual certificate
-      },
-    ],
-  },
-  {
-    category: 'Research Methods & Academic Skills',
-    courses: [
-      {
-        title: 'Research Methodology in Physical Sciences',
-        provider: 'Coursera (University of California, Davis)',
-        status: 'In Progress',
-        completionDate: 'Expected: November 2025',
-        description: 'Systematic approach to scientific research, experimental design, data analysis, and academic writing in physical sciences.',
-        skills: ['Research Design', 'Statistical Analysis', 'Academic Writing', 'Scientific Method'],
-        certificateUrl: null,
-      },
-      {
-        title: 'Data Analysis and Visualization in R',
-        provider: 'edX (Harvard University)',
-        status: 'Completed',
-        completionDate: 'May 2025',
-        description: 'Statistical data analysis and visualization techniques using R for scientific research applications.',
-        skills: ['R Programming', 'Statistical Analysis', 'Data Visualization', 'Research Statistics'],
-        certificateUrl: '#', // Placeholder for actual certificate
-      },
-    ],
-  },
 ];
 
 // Learning statistics
 const learningStats = {
-  totalCourses: 7,
-  completedCourses: 5,
-  inProgressCourses: 2,
-  totalHours: 320,
-  certificatesEarned: 5,
+  totalCourses: 1,
+  completedCourses: 1,
+  inProgressCourses: 0,
+  totalHours: 25, // Typical comprehensive Pandas bootcamp duration
+  certificatesEarned: 1,
 };
 
 export default function LearningJourneyPage() {
