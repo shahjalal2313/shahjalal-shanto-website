@@ -12,6 +12,15 @@ const learningCategories = [
     category: 'Data Science & Analytics',
     courses: [
       {
+        title: 'The Power of Statistics',
+        provider: 'Coursera (Google Advanced Data Analytics Certificate)',
+        status: 'Audited',
+        completionDate: 'February 2024',
+        description: 'Comprehensive exploration of statistical concepts essential for data analysis. This course strengthened my foundation in probability distributions, hypothesis testing, and statistical inference while providing hands-on experience with Python for statistical analysis. The practical approach helped me understand how statistics drive data-driven decision making in real-world scenarios.',
+        skills: ['Statistical Analysis', 'Hypothesis Testing', 'Probability Distributions', 'Statistical Inference', 'Python Statistics', 'Descriptive Statistics', 'Sampling Methods', 'Confidence Intervals'],
+        certificateUrl: null,
+      },
+      {
         title: 'The Ultimate Pandas Bootcamp: Advanced Python Data Analysis',
         provider: 'Udemy',
         status: 'Completed',
@@ -26,11 +35,11 @@ const learningCategories = [
 
 // Learning statistics
 const learningStats = {
-  totalCourses: 1,
-  completedCourses: 1,
+  totalCourses: 2,
+  completedCourses: 1, // Pandas (with certificate)
   inProgressCourses: 0,
-  totalHours: 25, // Typical comprehensive Pandas bootcamp duration
-  certificatesEarned: 1,
+  totalHours: 50, // Pandas (~25) + Statistics (~25)
+  certificatesEarned: 1, // Only Pandas has certificate
 };
 
 export default function LearningJourneyPage() {
