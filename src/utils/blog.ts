@@ -53,7 +53,7 @@ export function getAllBlogSlugs(): string[] {
     return fileNames
       .filter((name) => name.endsWith('.mdx'))
       .map((name) => name.replace(/\.mdx$/, ''));
-  } catch (error) {
+  } catch {
     console.warn('Blog directory not found, returning empty array');
     return [];
   }
@@ -118,7 +118,7 @@ export async function getAllBlogPosts(): Promise<BlogPostMeta[]> {
       if (!post) return null;
       
       // Return only metadata, not full content
-      const { content: _, ...meta } = post;
+      const { content, ...meta } = post;
       return meta;
     })
   );

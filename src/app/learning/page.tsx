@@ -41,6 +41,20 @@ const learningCategories = [
     ],
   },
   {
+    category: 'Data Science & Analytics',
+    courses: [
+      {
+        title: 'The Ultimate Pandas Bootcamp: Advanced Python Data Analysis',
+        provider: 'Udemy',
+        status: 'Completed',
+        completionDate: 'September 2023',
+        description: 'A deep dive into the world of data analysis with Python\'s most powerful library. This comprehensive course took me through everything from basic data structures to advanced analytical techniques, real-world data cleaning challenges, and creating meaningful visualizations that tell compelling stories.',
+        skills: ['Advanced Pandas', 'Data Manipulation', 'Data Cleaning', 'Statistical Analysis', 'Data Visualization', 'Python Data Science'],
+        certificateUrl: 'https://www.udemy.com/certificate/UC-5eb9b10c-9263-4287-b709-5c2255750896/',
+      },
+    ],
+  },
+  {
     category: 'Programming & Software Development',
     courses: [
       {
