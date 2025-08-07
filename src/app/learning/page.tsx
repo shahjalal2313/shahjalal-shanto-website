@@ -12,16 +12,6 @@ const learningCategories = [
     category: 'Programming & Software Development',
     courses: [
       {
-        title: 'Python Data Structures',
-        provider: 'Coursera (University of Michigan - Dr. Charles Severance)',
-        status: 'Completed',
-        completionDate: 'November 2023',
-        description: 'Building on the solid foundation from the first Python course, this course took me deeper into Python\'s powerful built-in data structures. What I found most valuable was learning how to move beyond simple procedural programming to more sophisticated data manipulation and analysis. Dr. Chuck\'s teaching continued to be exceptional, making complex concepts like dictionaries and tuples feel intuitive and practical. The course perfectly bridged the gap between basic programming and real-world data handling - showing me how lists, dictionaries, and tuples work together to solve multi-step problems. The file handling sections were particularly useful, teaching me how to read and write data effectively. This course significantly expanded my ability to work with structured data and laid the groundwork for more advanced data science work.',
-        skills: ['Python Lists', 'Python Dictionaries', 'Python Tuples', 'File Input/Output', 'String Manipulation', 'Data Structure Selection', 'Key-Value Pair Programming', 'Multi-step Data Processing', 'Data Sorting & Filtering', 'Complex Data Analysis', 'Structured Data Handling', 'Python Built-in Functions'],
-        certificateUrl: 'https://coursera.org/share/17f68f6c8486854b1f63b73a5b6ff9e8',
-        courseUrl: 'https://www.coursera.org/learn/python-data',
-      },
-      {
         title: 'Programming for Everybody (Getting Started with Python)',
         provider: 'Coursera (University of Michigan - Dr. Charles Severance)',
         status: 'Completed',
@@ -30,6 +20,16 @@ const learningCategories = [
         skills: ['Python Fundamentals', 'Basic Programming Logic', 'Variables & Data Types', 'Conditional Statements', 'Loops & Iteration', 'Functions', 'Sequential Programming', 'Computer Memory Concepts', 'Problem-Solving with Code', 'Basic Input/Output Operations'],
         certificateUrl: 'https://coursera.org/share/73646e350c82357bd9f783105aa382ac',
         courseUrl: 'https://www.coursera.org/learn/python',
+      },
+      {
+        title: 'Python Data Structures',
+        provider: 'Coursera (University of Michigan - Dr. Charles Severance)',
+        status: 'Completed',
+        completionDate: 'November 2020',
+        description: 'Building on the solid foundation from the first Python course, this course took me deeper into Python\'s powerful built-in data structures. What I found most valuable was learning how to move beyond simple procedural programming to more sophisticated data manipulation and analysis. Dr. Chuck\'s teaching continued to be exceptional, making complex concepts like dictionaries and tuples feel intuitive and practical. The course perfectly bridged the gap between basic programming and real-world data handling - showing me how lists, dictionaries, and tuples work together to solve multi-step problems. The file handling sections were particularly useful, teaching me how to read and write data effectively. This course significantly expanded my ability to work with structured data and laid the groundwork for more advanced data science work.',
+        skills: ['Python Lists', 'Python Dictionaries', 'Python Tuples', 'File Input/Output', 'String Manipulation', 'Data Structure Selection', 'Key-Value Pair Programming', 'Multi-step Data Processing', 'Data Sorting & Filtering', 'Complex Data Analysis', 'Structured Data Handling', 'Python Built-in Functions'],
+        certificateUrl: 'https://coursera.org/share/17f68f6c8486854b1f63b73a5b6ff9e8',
+        courseUrl: 'https://www.coursera.org/learn/python-data',
       },
       {
         title: '100 Days of Code: The Complete Python Pro Bootcamp',
