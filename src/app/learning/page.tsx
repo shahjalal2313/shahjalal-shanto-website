@@ -12,6 +12,16 @@ const learningCategories = [
     category: 'Programming & Software Development',
     courses: [
       {
+        title: 'Programming for Everybody (Getting Started with Python)',
+        provider: 'Coursera (University of Michigan - Dr. Charles Severance)',
+        status: 'Completed',
+        completionDate: 'November 2020',
+        description: 'This course was my introduction to the world of programming and laid the foundation for everything I\'ve learned since. Dr. Chuck\'s clear and encouraging teaching style made programming concepts accessible and enjoyable. I learned how to construct programs from simple instructions, understanding how computers use memory to store and calculate information. The course beautifully covered the four fundamental programming patterns: sequential execution, conditional logic, functions, and loops. What I appreciated most was how it avoided complex mathematics while still teaching solid programming fundamentals. This course gave me the confidence to pursue more advanced programming topics and sparked my passion for coding.',
+        skills: ['Python Fundamentals', 'Basic Programming Logic', 'Variables & Data Types', 'Conditional Statements', 'Loops & Iteration', 'Functions', 'Sequential Programming', 'Computer Memory Concepts', 'Problem-Solving with Code', 'Basic Input/Output Operations'],
+        certificateUrl: 'https://coursera.org/share/73646e350c82357bd9f783105aa382ac',
+        courseUrl: 'https://www.coursera.org/learn/python',
+      },
+      {
         title: '100 Days of Code: The Complete Python Pro Bootcamp',
         provider: 'Udemy (Dr. Angela Yu)',
         status: 'In Progress (58%)',
@@ -82,11 +92,11 @@ const learningCategories = [
 
 // Learning statistics
 const learningStats = {
-  totalCourses: 6,
-  completedCourses: 1, // Pandas (with certificate)
+  totalCourses: 7,
+  completedCourses: 2, // Pandas + Programming for Everybody (both with certificates)
   inProgressCourses: 4, // 100 Days of Code (58%) + ML Zero to Mastery (61%) + Data Science Bootcamp (50%) + Deep Learning (31%)
-  totalHours: 155, // Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15) + Deep Learning (~20 hours so far)
-  certificatesEarned: 1, // Only Pandas has certificate
+  totalHours: 175, // Programming for Everybody (~20) + Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15) + Deep Learning (~20 hours so far)
+  certificatesEarned: 2, // Pandas + Programming for Everybody certificates
 };
 
 export default function LearningJourneyPage() {
