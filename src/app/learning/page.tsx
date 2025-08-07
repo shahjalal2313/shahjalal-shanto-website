@@ -87,6 +87,16 @@ const learningCategories = [
         courseUrl: 'https://www.udemy.com/course/complete-machine-learning-and-data-science-zero-to-mastery/',
       },
       {
+        title: 'Intro to Machine Learning',
+        provider: 'Kaggle Learn (Dan Becker)',
+        status: 'Completed',
+        completionDate: 'February 2024',
+        description: 'This course provided an excellent practical introduction to machine learning fundamentals through hands-on coding exercises. What I appreciated most was the focus on building actual models rather than just theory - working with the Iowa housing dataset to predict home prices gave me concrete experience with the entire ML pipeline. Dan Becker\'s teaching approach was perfect for getting started, breaking down complex concepts like overfitting and model validation into digestible lessons. The progression from simple decision trees to random forests helped me understand how ML models can be improved iteratively. The course struck the right balance between conceptual understanding and practical implementation, giving me confidence to tackle real-world ML problems.',
+        skills: ['Decision Trees', 'Random Forests', 'Model Validation', 'Cross-Validation', 'Overfitting & Underfitting', 'Pandas Data Exploration', 'Predictive Modeling', 'Feature Selection', 'Model Performance Evaluation', 'Kaggle Competitions', 'Scikit-learn Basics'],
+        certificateUrl: null,
+        courseUrl: 'https://www.kaggle.com/learn/intro-to-machine-learning',
+      },
+      {
         title: 'The Ultimate Pandas Bootcamp: Advanced Python Data Analysis',
         provider: 'Udemy',
         status: 'Completed',
@@ -102,11 +112,11 @@ const learningCategories = [
 
 // Learning statistics
 const learningStats = {
-  totalCourses: 8,
-  completedCourses: 3, // Pandas + Programming for Everybody + Python Data Structures (all with certificates)
+  totalCourses: 9,
+  completedCourses: 4, // Pandas + Programming for Everybody + Python Data Structures + Kaggle Intro to ML (3 with certificates)
   inProgressCourses: 4, // 100 Days of Code (58%) + ML Zero to Mastery (61%) + Data Science Bootcamp (50%) + Deep Learning (31%)
-  totalHours: 195, // Python Data Structures (~20) + Programming for Everybody (~20) + Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15) + Deep Learning (~20 hours so far)
-  certificatesEarned: 3, // Pandas + Programming for Everybody + Python Data Structures certificates
+  totalHours: 198, // Kaggle Intro ML (~3) + Python Data Structures (~20) + Programming for Everybody (~20) + Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15) + Deep Learning (~20 hours so far)
+  certificatesEarned: 3, // Pandas + Programming for Everybody + Python Data Structures certificates (Kaggle course completed but no certificate mentioned)
 };
 
 export default function LearningJourneyPage() {
