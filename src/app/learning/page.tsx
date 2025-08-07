@@ -27,6 +27,16 @@ const learningCategories = [
     category: 'Data Science & Analytics',
     courses: [
       {
+        title: 'The Data Science Course: Complete Data Science Bootcamp',
+        provider: 'Udemy (365 Careers)',
+        status: 'In Progress (50%)',
+        completionDate: 'Started September 2023',
+        description: 'A comprehensive bootcamp that has significantly strengthened my statistical foundation for data science. What I appreciate most about this course is its systematic approach to building mathematical and statistical literacy from the ground up. I\'ve completed the foundational sections covering probability theory, descriptive and inferential statistics, and hypothesis testing. The course excellently bridges theoretical concepts with practical applications, helping me understand how statistical principles form the backbone of data science decision-making. The clear explanations and step-by-step approach have made complex statistical concepts much more accessible.',
+        skills: ['Probability Theory', 'Descriptive Statistics', 'Inferential Statistics', 'Hypothesis Testing', 'Statistical Distributions', 'Central Tendency & Variability', 'Statistical Significance', 'Confidence Intervals', 'Statistical Sampling', 'Data Types & Scales', 'Statistical Measures', 'Python for Statistics'],
+        certificateUrl: null,
+        courseUrl: 'https://www.udemy.com/course/the-data-science-course-complete-data-science-bootcamp/',
+      },
+      {
         title: 'The Power of Statistics',
         provider: 'Coursera (Google Advanced Data Analytics Certificate)',
         status: 'Audited',
@@ -62,10 +72,10 @@ const learningCategories = [
 
 // Learning statistics
 const learningStats = {
-  totalCourses: 4,
+  totalCourses: 5,
   completedCourses: 1, // Pandas (with certificate)
-  inProgressCourses: 2, // 100 Days of Code (58%) + ML Zero to Mastery (61%)
-  totalHours: 120, // Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30 hours so far)
+  inProgressCourses: 3, // 100 Days of Code (58%) + ML Zero to Mastery (61%) + Data Science Bootcamp (50%)
+  totalHours: 135, // Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15 hours so far)
   certificatesEarned: 1, // Only Pandas has certificate
 };
 
