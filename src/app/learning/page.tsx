@@ -9,6 +9,21 @@ export const metadata: Metadata = {
 // Learning categories and achievements
 const learningCategories = [
   {
+    category: 'Programming & Software Development',
+    courses: [
+      {
+        title: '100 Days of Code: The Complete Python Pro Bootcamp',
+        provider: 'Udemy (Dr. Angela Yu)',
+        status: 'In Progress (58%)',
+        completionDate: 'Started December 2022',
+        description: 'This has been one of the best courses I\'ve ever taken - it significantly improved my Python skills through its project-based approach. What makes this course exceptional is learning by building 100 real projects, from simple scripts to complex applications. I\'ve completed days 1-44 covering Python fundamentals and intermediate concepts, plus days 70-80 focusing on web development. The hands-on methodology has been invaluable for understanding how Python applies to real-world programming challenges.',
+        skills: ['Python Programming', 'Object-Oriented Programming', 'Data Structures & Algorithms', 'Web Development with Flask', 'API Development', 'Web Scraping', 'GUI Programming with Tkinter', 'Game Development', 'Automation Scripts', 'File Handling', 'Error Handling', 'Testing & Debugging'],
+        certificateUrl: null,
+        courseUrl: 'https://www.udemy.com/course/100-days-of-code/',
+      },
+    ],
+  },
+  {
     category: 'Data Science & Analytics',
     courses: [
       {
@@ -37,10 +52,10 @@ const learningCategories = [
 
 // Learning statistics
 const learningStats = {
-  totalCourses: 2,
+  totalCourses: 3,
   completedCourses: 1, // Pandas (with certificate)
-  inProgressCourses: 0,
-  totalHours: 50, // Pandas (~25) + Statistics (~25)
+  inProgressCourses: 1, // 100 Days of Code (58% complete)
+  totalHours: 90, // Pandas (~25) + Statistics (~25) + 100 Days (~40 hours so far)
   certificatesEarned: 1, // Only Pandas has certificate
 };
 
@@ -106,6 +121,8 @@ export default function LearningJourneyPage() {
                         className={`px-3 py-1 rounded-full text-sm font-medium ${
                           course.status === 'Completed'
                             ? 'bg-green-100 text-green-800'
+                            : course.status.includes('In Progress')
+                            ? 'bg-blue-100 text-blue-800'
                             : 'bg-yellow-100 text-yellow-800'
                         }`}
                       >
