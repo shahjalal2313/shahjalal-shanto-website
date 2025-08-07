@@ -37,6 +37,16 @@ const learningCategories = [
         courseUrl: 'https://www.coursera.org/learn/the-power-of-statistics',
       },
       {
+        title: 'Complete Machine Learning and Data Science: Zero to Mastery',
+        provider: 'Udemy (Daniel Bourke - Zero to Mastery)',
+        status: 'In Progress (61%)',
+        completionDate: 'Started July 2023',
+        description: 'An incredibly comprehensive machine learning course that has transformed my understanding of data science from the ground up. What sets this course apart is its practical, hands-on approach using real-world datasets and industry-standard tools. I\'ve completed the foundational sections covering essential ML libraries, learned the systematic 6-step framework for approaching ML problems, and successfully built two milestone projects: a heart disease classifier and a bulldozer price predictor. The course brilliantly balances theory with practical application, making complex ML concepts accessible and immediately applicable.',
+        skills: ['Machine Learning Fundamentals', 'NumPy for Data Science', 'Pandas for Data Analysis', 'Matplotlib Data Visualization', 'Scikit-learn ML Models', 'Exploratory Data Analysis (EDA)', 'Feature Engineering', 'Classification Algorithms', 'Regression Algorithms', 'Model Evaluation', 'Cross-Validation', 'Supervised Learning', 'Data Preprocessing', 'ML Project Workflow'],
+        certificateUrl: null,
+        courseUrl: 'https://www.udemy.com/course/complete-machine-learning-and-data-science-zero-to-mastery/',
+      },
+      {
         title: 'The Ultimate Pandas Bootcamp: Advanced Python Data Analysis',
         provider: 'Udemy',
         status: 'Completed',
@@ -52,10 +62,10 @@ const learningCategories = [
 
 // Learning statistics
 const learningStats = {
-  totalCourses: 3,
+  totalCourses: 4,
   completedCourses: 1, // Pandas (with certificate)
-  inProgressCourses: 1, // 100 Days of Code (58% complete)
-  totalHours: 90, // Pandas (~25) + Statistics (~25) + 100 Days (~40 hours so far)
+  inProgressCourses: 2, // 100 Days of Code (58%) + ML Zero to Mastery (61%)
+  totalHours: 120, // Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30 hours so far)
   certificatesEarned: 1, // Only Pandas has certificate
 };
 
