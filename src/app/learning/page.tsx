@@ -47,6 +47,16 @@ const learningCategories = [
         courseUrl: 'https://www.coursera.org/learn/the-power-of-statistics',
       },
       {
+        title: 'A Deep Understanding of Deep Learning (with Python intro)',
+        provider: 'Udemy (Mike X Cohen)',
+        status: 'In Progress (31%)',
+        completionDate: 'Started April 2023',
+        description: 'This course has been exceptional in providing a truly deep, scientific understanding of how and why deep learning works, rather than just surface-level implementation. What I value most is Mike Cohen\'s experimental approach that emphasizes the mathematical foundations and theoretical principles behind neural networks. I\'ve covered the core mathematical concepts including gradient descent, backpropagation mechanics, and the calculus underlying neural network optimization. The course excels at building intuition through visualizations and hands-on PyTorch implementations, helping me understand not just what to do, but why these techniques work and when to apply different architectures and hyperparameters.',
+        skills: ['Deep Learning Theory', 'Neural Network Mathematics', 'PyTorch Framework', 'Gradient Descent Optimization', 'Backpropagation Algorithm', 'Loss Functions', 'Activation Functions', 'Feedforward Networks', 'Neural Network Architecture', 'Mathematical Foundations of DL', 'Scientific Approach to DL', 'Hyperparameter Understanding'],
+        certificateUrl: null,
+        courseUrl: 'https://www.udemy.com/course/deeplearning_x/',
+      },
+      {
         title: 'Complete Machine Learning and Data Science: Zero to Mastery',
         provider: 'Udemy (Daniel Bourke - Zero to Mastery)',
         status: 'In Progress (61%)',
@@ -72,10 +82,10 @@ const learningCategories = [
 
 // Learning statistics
 const learningStats = {
-  totalCourses: 5,
+  totalCourses: 6,
   completedCourses: 1, // Pandas (with certificate)
-  inProgressCourses: 3, // 100 Days of Code (58%) + ML Zero to Mastery (61%) + Data Science Bootcamp (50%)
-  totalHours: 135, // Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15 hours so far)
+  inProgressCourses: 4, // 100 Days of Code (58%) + ML Zero to Mastery (61%) + Data Science Bootcamp (50%) + Deep Learning (31%)
+  totalHours: 155, // Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15) + Deep Learning (~20 hours so far)
   certificatesEarned: 1, // Only Pandas has certificate
 };
 
