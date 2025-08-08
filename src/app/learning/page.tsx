@@ -121,17 +121,27 @@ const learningCategories = [
         certificateUrl: 'https://coursera.org/share/1adf4483166f86a45160ce8565cf13ca',
         courseUrl: 'https://www.coursera.org/learn/excel-essentials',
       },
+      {
+        title: 'Meta Social Media Marketing',
+        provider: 'Coursera (Meta - Facebook)',
+        status: 'Completed',
+        completionDate: 'January 2021',
+        description: 'This comprehensive Meta Social Media Marketing course provided me with essential skills for digital marketing in the modern social media landscape. What I found most valuable was learning directly from Meta\'s experts about the strategic approach to building engaged communities across Facebook, Instagram, and other social platforms. The course gave me hands-on experience with Meta Ads Manager, teaching me how to structure effective campaigns by selecting appropriate ad objectives, target audiences, budgets, and placements. I particularly appreciated the practical approach to content creation and brand development using the EPIC brand framework. The course equipped me with the ability to create compelling social media posts, manage content calendars, and analyze performance data for continuous optimization. This training has been invaluable for understanding how to establish a professional social media presence, engage audiences effectively, and measure campaign success through key performance indicators.',
+        skills: ['Social Media Strategy', 'Facebook Ads Manager', 'Instagram Marketing', 'Content Creation & Management', 'Social Media Analytics', 'Brand Development (EPIC Framework)', 'Target Audience Analysis', 'Campaign Optimization', 'Social Media Calendar Management', 'Content Moderation', 'KPI Measurement', 'Digital Marketing Strategy', 'Community Engagement', 'Social Media Advertising'],
+        certificateUrl: 'https://coursera.org/share/2676e5b0169cf9a01f4d10b3015e9857',
+        courseUrl: 'https://www.coursera.org/professional-certificates/facebook-social-media-marketing',
+      },
     ],
   },
 ];
 
 // Learning statistics
 const learningStats = {
-  totalCourses: 10,
-  completedCourses: 5, // Excel + Pandas + Programming for Everybody + Python Data Structures + Kaggle Intro to ML (4 with certificates)
+  totalCourses: 11,
+  completedCourses: 6, // Meta Social Media + Excel + Pandas + Programming for Everybody + Python Data Structures + Kaggle Intro to ML (5 with certificates)
   inProgressCourses: 4, // 100 Days of Code (58%) + ML Zero to Mastery (61%) + Data Science Bootcamp (50%) + Deep Learning (31%)
-  totalHours: 223, // Excel (~25) + Kaggle Intro ML (~3) + Python Data Structures (~20) + Programming for Everybody (~20) + Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15) + Deep Learning (~20 hours so far)
-  certificatesEarned: 4, // Excel + Pandas + Programming for Everybody + Python Data Structures certificates (Kaggle course completed but no certificate mentioned)
+  totalHours: 253, // Meta Social Media (~30) + Excel (~25) + Kaggle Intro ML (~3) + Python Data Structures (~20) + Programming for Everybody (~20) + Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15) + Deep Learning (~20 hours so far)
+  certificatesEarned: 5, // Meta Social Media + Excel + Pandas + Programming for Everybody + Python Data Structures certificates (Kaggle course completed but no certificate mentioned)
 };
 
 export default function LearningJourneyPage() {
