@@ -108,15 +108,30 @@ const learningCategories = [
       },
     ],
   },
+  {
+    category: 'Others',
+    courses: [
+      {
+        title: 'Excel Skills for Business: Essentials',
+        provider: 'Coursera (Macquarie University)',
+        status: 'Completed',
+        completionDate: 'November 2020',
+        description: 'This foundational course gave me comprehensive training in Microsoft Excel\'s core business applications. What I found most valuable was the structured approach to learning essential Excel skills through real-world business scenarios. The course excellently covered Excel user interface navigation, formula construction, and professional spreadsheet formatting. I particularly appreciated the hands-on approach with downloadable workbooks and practical challenge exercises that simulated actual business problems. The systematic progression from basic data entry to advanced calculations built my confidence in using Excel as a powerful business tool. The professional formatting techniques I learned have been invaluable for creating clear, presentable data visualizations and reports. This course established my foundation in Excel, making me comfortable with data manipulation, automated calculations, and creating meaningful business insights from raw data.',
+        skills: ['Excel Navigation & Interface', 'Formula Writing & Functions', 'Cell References (Relative & Absolute)', 'Professional Spreadsheet Formatting', 'Data Entry & Manipulation', 'Charts & Data Visualization', 'Business Calculations', 'Excel Styles & Themes', 'Data Analysis Fundamentals', 'Spreadsheet Design', 'Number Formatting', 'Excel Best Practices'],
+        certificateUrl: 'https://coursera.org/share/1adf4483166f86a45160ce8565cf13ca',
+        courseUrl: 'https://www.coursera.org/learn/excel-essentials',
+      },
+    ],
+  },
 ];
 
 // Learning statistics
 const learningStats = {
-  totalCourses: 9,
-  completedCourses: 4, // Pandas + Programming for Everybody + Python Data Structures + Kaggle Intro to ML (3 with certificates)
+  totalCourses: 10,
+  completedCourses: 5, // Excel + Pandas + Programming for Everybody + Python Data Structures + Kaggle Intro to ML (4 with certificates)
   inProgressCourses: 4, // 100 Days of Code (58%) + ML Zero to Mastery (61%) + Data Science Bootcamp (50%) + Deep Learning (31%)
-  totalHours: 198, // Kaggle Intro ML (~3) + Python Data Structures (~20) + Programming for Everybody (~20) + Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15) + Deep Learning (~20 hours so far)
-  certificatesEarned: 3, // Pandas + Programming for Everybody + Python Data Structures certificates (Kaggle course completed but no certificate mentioned)
+  totalHours: 223, // Excel (~25) + Kaggle Intro ML (~3) + Python Data Structures (~20) + Programming for Everybody (~20) + Pandas (~25) + Statistics (~25) + 100 Days (~40) + ML Course (~30) + Data Science Bootcamp (~15) + Deep Learning (~20 hours so far)
+  certificatesEarned: 4, // Excel + Pandas + Programming for Everybody + Python Data Structures certificates (Kaggle course completed but no certificate mentioned)
 };
 
 export default function LearningJourneyPage() {
