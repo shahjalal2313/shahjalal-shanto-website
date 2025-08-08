@@ -187,11 +187,12 @@ export default function LearningJourneyPage() {
             <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8">
               {category.category}
             </h2>
-            <div className="space-y-6">
+            {/* Mobile: Horizontal scroll, Desktop: Vertical stack */}
+            <div className="flex overflow-x-auto gap-6 pb-4 md:flex-col md:space-y-6 md:overflow-x-visible md:gap-0 md:pb-0 scroll-smooth">
               {category.courses.map((course, courseIndex) => (
                 <div
                   key={courseIndex}
-                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow"
+                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow flex-shrink-0 w-80 md:w-full md:flex-shrink course-card"
                 >
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div className="flex-1">

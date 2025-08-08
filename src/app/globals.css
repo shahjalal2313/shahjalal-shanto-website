@@ -35,3 +35,27 @@ body {
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
+
+/* Mobile course carousel improvements */
+@media (max-width: 768px) {
+  /* Hide scrollbars but keep functionality */
+  .overflow-x-auto {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .overflow-x-auto::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+  
+  /* Improve touch scrolling on mobile */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  
+  /* Optional: Add scroll snap to course cards */
+  .course-card {
+    scroll-snap-align: start;
+  }
+}
