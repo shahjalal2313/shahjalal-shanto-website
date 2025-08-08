@@ -2,6 +2,17 @@
 
 import { useState, useEffect } from 'react';
 
+interface Course {
+  title: string;
+  provider: string;
+  status: string;
+  completionDate: string;
+  description: string;
+  skills: string[];
+  certificateUrl: string | null;
+  courseUrl: string;
+}
+
 // Learning categories and achievements
 const learningCategories = [
   {
@@ -141,6 +152,9 @@ const learningStats = {
 };
 
 export default function LearningJourneyPage() {
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   useEffect(() => {
     document.title = 'Learning Journey - Shahjalal Shanto';
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -148,6 +162,32 @@ export default function LearningJourneyPage() {
       metaDescription.setAttribute('content', 'Professional development and continuous learning journey in computational chemistry, scientific computing, and academic research methodologies.');
     }
   }, []);
+
+  const openCourseModal = (course: Course) => {
+    setSelectedCourse(course);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeCourseModal = () => {
+    setSelectedCourse(null);
+    setIsModalOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
+  // Handle ESC key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isModalOpen) {
+        closeCourseModal();
+      }
+    };
+
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleEscape);
+      return () => document.removeEventListener('keydown', handleEscape);
+    }
+  }, [isModalOpen]);
 
   const truncateText = (text: string, limit: number = 150) => {
     if (text.length <= limit) return text;
@@ -217,6 +257,14 @@ export default function LearningJourneyPage() {
                       <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">{course.provider}</p>
                       <div className="text-gray-600 dark:text-gray-300 mb-4 flex-1">
                         <p className="text-sm leading-relaxed">{truncateText(course.description, 120)}</p>
+                        {course.description.length > 120 && (
+                          <button
+                            onClick={() => openCourseModal(course)}
+                            className="text-blue-600 dark:text-blue-400 text-xs font-medium mt-1 hover:underline"
+                          >
+                            Read Full Description
+                          </button>
+                        )}
                       </div>
                     </div>
                     <div className="flex flex-col items-end space-y-2">
@@ -252,9 +300,12 @@ export default function LearningJourneyPage() {
                             </span>
                           ))}
                           {course.skills.length > 8 && (
-                            <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded-md">
-                              +{course.skills.length - 8}
-                            </span>
+                            <button
+                              onClick={() => openCourseModal(course)}
+                              className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded-md hover:bg-blue-200 dark:hover:bg-blue-800"
+                            >
+                              +{course.skills.length - 8} more
+                            </button>
                           )}
                         </div>
                       </div>
@@ -392,6 +443,112 @@ export default function LearningJourneyPage() {
           </a>
         </div>
       </div>
+
+      {/* Course Details Modal */}
+      {isModalOpen && selectedCourse && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          onClick={closeCourseModal}
+        >
+          <div 
+            className="bg-white dark:bg-gray-800 rounded-xl max-w-4xl max-h-[90vh] overflow-y-auto w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-6 flex justify-between items-start">
+              <div className="flex-1 pr-4">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  {selectedCourse.title}
+                </h2>
+                <p className="text-blue-600 dark:text-blue-400 font-medium mb-1">
+                  {selectedCourse.provider}
+                </p>
+                <div className="flex items-center gap-3">
+                  <span
+                    className={`px-3 py-1 rounded-full text-sm font-medium ${
+                      selectedCourse.status === 'Completed'
+                        ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300'
+                        : selectedCourse.status.includes('In Progress')
+                        ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'
+                        : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300'
+                    }`}
+                  >
+                    {selectedCourse.status}
+                  </span>
+                  <span className="text-gray-500 text-sm">{selectedCourse.completionDate}</span>
+                </div>
+              </div>
+              <button
+                onClick={closeCourseModal}
+                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
+              >
+                <svg className="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="p-6">
+              {/* Full Description */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Course Description</h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {selectedCourse.description}
+                </p>
+              </div>
+
+              {/* All Skills */}
+              <div className="mb-8">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                  Skills Acquired ({selectedCourse.skills.length})
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedCourse.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="px-3 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded-lg"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                {selectedCourse.courseUrl && (
+                  <a
+                    href={selectedCourse.courseUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors font-medium"
+                  >
+                    View Course
+                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                )}
+                
+                {selectedCourse.certificateUrl && (
+                  <a
+                    href={selectedCourse.certificateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors font-medium"
+                  >
+                    View Certificate
+                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
