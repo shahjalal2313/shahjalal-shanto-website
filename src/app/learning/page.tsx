@@ -260,9 +260,9 @@ export default function LearningJourneyPage() {
                         {course.description.length > 120 && (
                           <button
                             onClick={() => openCourseModal(course)}
-                            className="text-blue-600 dark:text-blue-400 text-xs font-medium mt-1 hover:underline"
+                            className="text-blue-600 dark:text-blue-400 text-sm font-semibold mt-2 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
                           >
-                            Read Full Description
+                            Read Full Description →
                           </button>
                         )}
                       </div>
