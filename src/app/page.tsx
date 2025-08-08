@@ -6,16 +6,16 @@ export default function Home() {
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Hero Section */}
       <section className="py-20 text-center">
-        <h1 className="text-5xl font-bold text-gray-900 mb-6">
+        <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
           Welcome to my digital space
         </h1>
-        <p className="text-xl text-gray-600 mb-4 max-w-3xl mx-auto">
+        <p className="text-xl text-gray-600 dark:text-gray-300 mb-4 max-w-3xl mx-auto">
           I&apos;m{' '}
-          <span className="font-semibold text-gray-900">Shahjalal Shanto</span>,
+          <span className="font-semibold text-gray-900 dark:text-white">Shahjalal Shanto</span>,
           a passionate software engineer specializing in web development and
           computational chemistry.
         </p>
-        <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-2xl mx-auto">
           I create innovative solutions that bridge technology and science,
           building tools and applications that make a meaningful impact.
         </p>
@@ -28,7 +28,7 @@ export default function Home() {
           </Link>
           <Link
             href="/contact"
-            className="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium"
+            className="px-8 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors font-medium"
           >
             Get in Touch
           </Link>
@@ -36,18 +36,18 @@ export default function Home() {
       </section>
 
       {/* About Preview */}
-      <section className="py-16 border-t border-gray-200">
+      <section className="py-16 border-t border-gray-200 dark:border-gray-700">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">About Me</h2>
-            <p className="text-gray-600 mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">About Me</h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
               ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
               aliquip ex ea commodo consequat. Duis aute irure dolor in
               reprehenderit.
             </p>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
               posuere cubilia curae. Mauris viverra veniam sit amet massa
               convallis, in tempor nisl tincidunt. Pellentesque habitant morbi
@@ -73,16 +73,16 @@ export default function Home() {
               </svg>
             </Link>
           </div>
-          <div className="bg-gray-100 rounded-lg p-8">
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+          <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
               Technical Skills
             </h3>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <h4 className="font-medium text-gray-700 mb-2">
+                <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Web Development
                 </h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                   <li>• Next.js & React</li>
                   <li>• TypeScript</li>
                   <li>• Tailwind CSS</li>
@@ -90,10 +90,10 @@ export default function Home() {
                 </ul>
               </div>
               <div>
-                <h4 className="font-medium text-gray-700 mb-2">
+                <h4 className="font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Computational Chemistry
                 </h4>
-                <ul className="text-sm text-gray-600 space-y-1">
+                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                   <li>• Molecular Analysis</li>
                   <li>• Python & RDKit</li>
                   <li>• Data Visualization</li>
@@ -106,17 +106,17 @@ export default function Home() {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-16 border-t border-gray-200">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+      <section className="py-16 border-t border-gray-200 dark:border-gray-700">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
           Featured Projects
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {/* Molecular Analyzer */}
-          <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
               {EXTERNAL_PROJECTS.molecularAnalyzer.title}
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               {EXTERNAL_PROJECTS.molecularAnalyzer.description}
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
@@ -153,11 +153,11 @@ export default function Home() {
           </div>
 
           {/* This Website */}
-          <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
               Personal Academic Website
             </h3>
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 dark:text-gray-300 mb-4">
               This website - a professional academic portfolio built with modern
               web technologies, optimized for performance and accessibility.
             </p>
@@ -175,7 +175,7 @@ export default function Home() {
             </div>
             <Link
               href="/projects"
-              className="inline-flex items-center px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
             >
               View All Projects
             </Link>
@@ -184,8 +184,8 @@ export default function Home() {
       </section>
 
       {/* Latest Blog Posts */}
-      <section className="py-16 border-t border-gray-200">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+      <section className="py-16 border-t border-gray-200 dark:border-gray-700">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
           Latest Articles
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
@@ -214,18 +214,18 @@ export default function Home() {
           ].map((post, index) => (
             <article
               key={index}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
+              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-6 hover:shadow-md transition-shadow"
             >
-              <div className="text-sm text-gray-500 mb-2">{post.date}</div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">{post.date}</div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
                 {post.title}
               </h3>
-              <p className="text-gray-600 mb-3">{post.excerpt}</p>
+              <p className="text-gray-600 dark:text-gray-300 mb-3">{post.excerpt}</p>
               <div className="flex flex-wrap gap-2">
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded"
+                    className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded"
                   >
                     {tag}
                   </span>
@@ -237,7 +237,7 @@ export default function Home() {
         <div className="text-center mt-8">
           <Link
             href="/blog"
-            className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-gray-900 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors"
           >
             Read All Articles
           </Link>
@@ -245,11 +245,11 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 border-t border-gray-200 text-center">
-        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+      <section className="py-16 border-t border-gray-200 dark:border-gray-700 text-center">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
           Let&apos;s Work Together
         </h2>
-        <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Excepteur sint
           occaecat cupidatat non proident, sunt in culpa qui officia.

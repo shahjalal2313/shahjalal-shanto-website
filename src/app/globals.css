@@ -19,8 +19,19 @@
   }
 }
 
+/* Enable dark mode based on system preference */
+html {
+  color-scheme: light dark;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure smooth transitions for dark mode */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }

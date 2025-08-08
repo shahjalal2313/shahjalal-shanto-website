@@ -8,12 +8,12 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-sm border-b">
+    <header className="bg-white dark:bg-gray-900 shadow-sm border-b border-gray-200 dark:border-gray-700">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold text-gray-900">
+            <span className="text-xl font-bold text-gray-900 dark:text-white">
               {SITE_CONFIG.name}
             </span>
           </Link>
@@ -24,7 +24,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
                 {item.name}
               </Link>
@@ -35,7 +35,7 @@ export default function Header() {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-gray-900 focus:outline-none focus:text-gray-900"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white focus:outline-none focus:text-gray-900 dark:focus:text-white"
               aria-label="Toggle menu"
             >
               <svg
@@ -67,12 +67,12 @@ export default function Header() {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
               {NAVIGATION_ITEMS.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                  className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
