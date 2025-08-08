@@ -141,8 +141,6 @@ const learningStats = {
 };
 
 export default function LearningJourneyPage() {
-  const [expandedCards, setExpandedCards] = useState<{[key: string]: boolean}>({});
-
   useEffect(() => {
     document.title = 'Learning Journey - Shahjalal Shanto';
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -150,13 +148,6 @@ export default function LearningJourneyPage() {
       metaDescription.setAttribute('content', 'Professional development and continuous learning journey in computational chemistry, scientific computing, and academic research methodologies.');
     }
   }, []);
-
-  const toggleExpanded = (cardId: string) => {
-    setExpandedCards(prev => ({
-      ...prev,
-      [cardId]: !prev[cardId]
-    }));
-  };
 
   const truncateText = (text: string, limit: number = 150) => {
     if (text.length <= limit) return text;
@@ -212,16 +203,11 @@ export default function LearningJourneyPage() {
                 className="flex overflow-x-auto gap-4 pb-4 md:flex-col md:space-y-6 md:overflow-x-visible md:gap-0 md:pb-0 scroll-smooth snap-x snap-mandatory"
               >
                 {category.courses.map((course, courseIndex) => {
-                  const cardId = `${categoryIndex}-${courseIndex}`;
-                  const isExpanded = expandedCards[cardId];
                   return (
                     <div
                       key={courseIndex}
-                      className="bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-md hover:shadow-xl dark:shadow-lg dark:hover:shadow-xl transition-all duration-300 flex-shrink-0 w-[calc(100vw-3rem)] sm:w-96 md:w-full md:flex-shrink snap-center flex flex-col"
-                      style={{
-                        minHeight: '480px', // Fixed height for consistency
-                        maxHeight: isExpanded ? 'none' : '480px'
-                      }}
+                      className="bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-md hover:shadow-xl dark:shadow-lg dark:hover:shadow-xl transition-all duration-300 flex-shrink-0 w-[calc(100vw-3rem)] sm:w-96 md:w-full snap-center flex flex-col justify-between"
+                      style={{ height: '520px' }}
                     >
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
                     <div className="flex-1">
@@ -229,16 +215,8 @@ export default function LearningJourneyPage() {
                         {course.title}
                       </h3>
                       <p className="text-blue-600 dark:text-blue-400 font-medium mb-2">{course.provider}</p>
-                      <div className="text-gray-600 dark:text-gray-300 mb-4">
-                        <p>{isExpanded ? course.description : truncateText(course.description)}</p>
-                        {course.description.length > 150 && (
-                          <button
-                            onClick={() => toggleExpanded(cardId)}
-                            className="text-blue-600 dark:text-blue-400 text-sm font-medium mt-1 hover:underline"
-                          >
-                            {isExpanded ? 'Show Less' : 'Read More'}
-                          </button>
-                        )}
+                      <div className="text-gray-600 dark:text-gray-300 mb-4 flex-1">
+                        <p className="text-sm leading-relaxed">{truncateText(course.description, 120)}</p>
                       </div>
                     </div>
                     <div className="flex flex-col items-end space-y-2">
@@ -257,86 +235,64 @@ export default function LearningJourneyPage() {
                     </div>
                   </div>
 
-                      {/* Skills */}
-                      <div className="mb-6 flex-1">
-                        <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2">Skills Acquired:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {(isExpanded ? course.skills : course.skills.slice(0, 6)).map((skill, skillIndex) => (
+                      {/* Skills - Fixed container */}
+                      <div className="mb-4">
+                        <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2">Skills:</h4>
+                        <div 
+                          className="flex flex-wrap gap-1 overflow-hidden"
+                          style={{ maxHeight: '80px' }}
+                        >
+                          {course.skills.slice(0, 8).map((skill, skillIndex) => (
                             <span
                               key={skillIndex}
-                              className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-full"
+                              className="px-2 py-1 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs rounded-md"
+                              style={{ fontSize: '10px' }}
                             >
                               {skill}
                             </span>
                           ))}
-                          {course.skills.length > 6 && !isExpanded && (
-                            <button
-                              onClick={() => toggleExpanded(cardId)}
-                              className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded-full hover:bg-blue-200 dark:hover:bg-blue-800"
-                            >
-                              +{course.skills.length - 6} more
-                            </button>
+                          {course.skills.length > 8 && (
+                            <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded-md">
+                              +{course.skills.length - 8}
+                            </span>
                           )}
                         </div>
                       </div>
 
-                      {/* Course and Certificate Links - Fixed at bottom */}
-                      <div className="mt-auto">
-                        {(course.courseUrl || course.certificateUrl) && (
-                          <div className="pt-4 border-t border-gray-300 dark:border-gray-600">
-                            <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-                              {/* View Course Button */}
-                              {course.courseUrl && (
-                                <a
-                                  href={course.courseUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center px-4 py-2 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-sm font-medium"
-                                >
-                                  View Course
-                                  <svg
-                                    className="ml-2 w-4 h-4"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth={2}
-                                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                    />
-                                  </svg>
-                                </a>
-                              )}
-                              
-                              {/* View Certificate Button */}
-                              {course.certificateUrl && (
-                                <a
-                                  href={course.certificateUrl}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="inline-flex items-center px-4 py-2 bg-blue-600 dark:bg-blue-500 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors text-sm font-medium"
-                                >
-                                  View Certificate
-                                  <svg
-                                    className="ml-2 w-4 h-4"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                  >
-                                    <path
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      strokeWidth={2}
-                                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                    />
-                                  </svg>
-                                </a>
-                              )}
+                      {/* Course and Certificate Links - Always visible */}
+                      <div className="pt-4 border-t border-gray-300 dark:border-gray-600">
+                        <div className="flex gap-2 justify-center">
+                          {/* View Course Button */}
+                          {course.courseUrl && (
+                            <a
+                              href={course.courseUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-1 text-center px-3 py-2 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-xs font-medium"
+                            >
+                              View Course
+                            </a>
+                          )}
+                          
+                          {/* View Certificate Button */}
+                          {course.certificateUrl && (
+                            <a
+                              href={course.certificateUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex-1 text-center px-3 py-2 bg-blue-600 dark:bg-blue-500 text-white rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors text-xs font-medium"
+                            >
+                              View Certificate
+                            </a>
+                          )}
+                          
+                          {/* Placeholder if no links */}
+                          {!course.courseUrl && !course.certificateUrl && (
+                            <div className="flex-1 text-center px-3 py-2 bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400 rounded-lg text-xs">
+                              In Progress
                             </div>
-                          </div>
-                        )}
+                          )}
+                        </div>
                       </div>
                     </div>
                   );
