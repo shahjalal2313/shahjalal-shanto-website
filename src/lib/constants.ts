@@ -48,7 +48,7 @@ export const PROJECTS_DATA = [
     technologies: ['Python', 'Streamlit', 'RDKit', 'Chemistry', 'Pandas', 'Plotly'],
     category: 'Computational Chemistry',
     status: 'Live Application',
-    liveUrl: 'https://molecular-analyzer.streamlit.app',
+    liveUrl: 'https://molecularanalyzer.shahjalal-shanto.com',
     githubUrl: 'https://github.com/shahjalal-shanto/molecular-analyzer',
     featured: true,
     timeline: '2024 - Present',
@@ -101,7 +101,7 @@ export const EXTERNAL_PROJECTS = {
   molecularAnalyzer: {
     title: 'Molecular Analyzer',
     description: 'Computational chemistry tool for molecular analysis',
-    url: 'https://molecular-analyzer.streamlit.app',
+    url: 'https://molecularanalyzer.shahjalal-shanto.com',
     technologies: ['Python', 'Streamlit', 'RDKit', 'Chemistry'],
   },
 } as const;
