@@ -276,14 +276,12 @@ export default function LearningJourneyPage() {
                         <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-4">
                           {truncateText(course.description, 140)}
                         </p>
-                        {course.description.length > 140 && (
-                          <button
-                            onClick={() => openCourseModal(course)}
-                            className="text-blue-600 dark:text-blue-400 text-xs sm:text-sm font-semibold mt-1 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
-                          >
-                            Read Full Description →
-                          </button>
-                        )}
+                        <button
+                          onClick={() => openCourseModal(course)}
+                          className="text-blue-600 dark:text-blue-400 text-xs sm:text-sm font-semibold mt-1 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                        >
+                          Read Full Description →
+                        </button>
                       </div>
 
                       {/* Skills Section */}
