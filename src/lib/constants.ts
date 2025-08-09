@@ -49,7 +49,7 @@ export const PROJECTS_DATA = [
     category: 'Computational Chemistry',
     status: 'Live Application',
     liveUrl: 'https://molecularanalyzer.shahjalal-shanto.com',
-    githubUrl: 'https://github.com/shahjalal-shanto/molecular-analyzer',
+    githubUrl: 'https://github.com/shahjalal2313/molecular-analyzer',
     featured: true,
     timeline: '2024 - Present',
     features: [
@@ -77,7 +77,7 @@ export const PROJECTS_DATA = [
     category: 'Web Development',
     status: 'Live Website',
     liveUrl: 'https://shahjalal-shanto.com',
-    githubUrl: 'https://github.com/shahjalal-shanto/portfolio-website',
+    githubUrl: 'https://github.com/shahjalal2313/shahjalal-shanto-website',
     featured: true,
     timeline: '2024 - Present',
     features: [
