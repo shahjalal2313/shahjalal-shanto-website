@@ -272,13 +272,13 @@ export default function LearningJourneyPage() {
                       </div>
 
                       {/* Description Section */}
-                      <div className="flex-grow mb-3 overflow-hidden">
-                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-4">
-                          {truncateText(course.description, 140)}
+                      <div className="flex-grow mb-3 overflow-hidden flex flex-col">
+                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed line-clamp-3 flex-grow">
+                          {truncateText(course.description, 120)}
                         </p>
                         <button
                           onClick={() => openCourseModal(course)}
-                          className="text-blue-600 dark:text-blue-400 text-xs sm:text-sm font-semibold mt-1 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
+                          className="text-blue-600 dark:text-blue-400 text-xs sm:text-sm font-semibold mt-2 hover:underline hover:text-blue-700 dark:hover:text-blue-300 transition-colors flex-shrink-0"
                         >
                           Read Full Description →
                         </button>
