@@ -36,7 +36,7 @@ export default function AboutPage() {
                 alt="Shah Md. Jalal Uddin - Professional graduation photo"
                 width={320}
                 height={384}
-                className="professional-hero-image w-full h-full object-cover"
+                className="professional-hero-image w-full h-full object-contain"
                 priority
                 sizes="(max-width: 768px) 300px, 320px"
               />
@@ -79,10 +79,10 @@ export default function AboutPage() {
             </div>
             <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
               <div className="font-bold text-lg text-purple-600">11+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">Global Clients</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">International Collaborations</div>
             </div>
             <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <div className="font-bold text-lg text-orange-600">⭐⭐⭐⭐⭐</div>
+              <div className="font-bold text-lg text-orange-600">5⭐</div>
               <div className="text-sm text-gray-600 dark:text-gray-300">20+ Projects</div>
             </div>
           </div>
@@ -149,19 +149,19 @@ export default function AboutPage() {
           {/* International Collaboration */}
           <div className="mb-12">
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              International Collaboration & Global Communication Excellence
+              International Professional Communication & Cross-Cultural Excellence
             </h3>
             <div className="prose prose-lg text-gray-600 dark:text-gray-300">
               <p>
-                Parallel to my expanding industry role, I developed specialized expertise in international collaboration 
-                through strategic consulting. I achieved remarkable success working with <strong>11+ international clients</strong> 
-                from diverse cultural and business backgrounds, completing <strong>20+ strategic projects</strong> with 
-                consistent <strong>5-star satisfaction ratings</strong>.
+                Complementing my technical expertise, I developed exceptional cross-cultural communication skills through 
+                professional consulting work with <strong>11+ international clients</strong> across diverse cultural backgrounds. 
+                Successfully managed <strong>20+ strategic communication projects</strong> with consistent <strong>5-star ratings</strong>, 
+                demonstrating adaptability and professional excellence in multicultural environments.
               </p>
               <p>
-                This experience directly translates to research collaboration readiness, including the ability to 
-                communicate complex concepts across cultural boundaries, manage international partnerships, and 
-                contribute effectively to multicultural research teams.
+                This international experience directly enhances my research collaboration readiness—essential skills for 
+                modern academic environments include communicating complex concepts across cultural boundaries, 
+                managing international research partnerships, and contributing effectively to diverse academic teams.
               </p>
             </div>
           </div>
@@ -248,32 +248,32 @@ export default function AboutPage() {
               </ul>
             </div>
             
-            {/* Global Communication & Collaboration */}
+            {/* International Communication & Collaboration */}
             <div className="skill-card p-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
                 <span className="mr-3 text-2xl">🌍</span>
-                Global Communication
+                International Communication
               </h3>
               <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span><strong>11+ international clients</strong> collaboration</span>
+                  <span><strong>Cross-cultural professional communication</strong></span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span><strong>20+ projects</strong> with 5-star ratings</span>
+                  <span><strong>11+ international</strong> professional collaborations</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span>Cross-cultural communication excellence</span>
+                  <span><strong>20+ strategic projects</strong> (5-star excellence)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span>Strategic project management</span>
+                  <span>Multicultural team collaboration</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span>Professional relationship building</span>
+                  <span>Research collaboration readiness</span>
                 </li>
               </ul>
             </div>
@@ -359,13 +359,13 @@ export default function AboutPage() {
               <div className="text-center">
                 <div className="text-4xl font-bold text-purple-600 mb-2">11+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">
-                  International Clients<br />Cross-Cultural Success
+                  International Collaborations<br />Cross-Cultural Excellence
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-orange-600 mb-2">20+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">
-                  Strategic Projects<br />5-Star Satisfaction
+                  Professional Projects<br />5-Star Excellence
                 </div>
               </div>
               <div className="text-center">
