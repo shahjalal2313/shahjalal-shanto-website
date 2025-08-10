@@ -94,6 +94,35 @@ export const PROJECTS_DATA = [
       'Comprehensive project documentation',
       'Mobile-first responsive design'
     ]
+  },
+  {
+    id: 'ai-quotes-generator',
+    title: 'AI Quotes Generator',
+    shortDescription:
+      'An automated system that generates inspiring quotes, creates beautiful images, and manages them through Google Sheets.',
+    fullDescription:
+      'A comprehensive automation system that combines multiple AI technologies to generate inspirational quotes, create corresponding visual content, and manage the entire workflow through Google Sheets integration. The system uses Gemini API for intelligent quote generation, DALL-E for image creation, and includes sophisticated image editing capabilities to overlay quotes with proper typography and author attribution.',
+    technologies: ['Python', 'Google Gemini API', 'OpenAI DALL-E', 'Google Sheets API', 'PIL/Pillow', 'Automation'],
+    category: 'AI & Automation',
+    status: 'Completed',
+    githubUrl: 'https://github.com/shahjalal2313/Shahjalals-Project/tree/master/ai-quotes-generator',
+    featured: false,
+    timeline: '2024',
+    features: [
+      'Automated quote generation using Gemini API with random topic selection',
+      'AI-powered image generation using OpenAI DALL-E',
+      'Advanced image editing with quote overlay and author attribution',
+      'Google Sheets integration for quote management and tracking',
+      'Comprehensive logging system for workflow monitoring',
+      'Automatic cleanup of temporary files and error handling'
+    ],
+    achievements: [
+      'Complete end-to-end automation workflow implementation',
+      'Successfully integrated multiple AI APIs (Gemini, DALL-E)',
+      'Built robust Google Sheets data management system',
+      'Implemented comprehensive error handling and logging',
+      'Created modular architecture for easy maintenance and updates'
+    ]
   }
 ] as const;
 
