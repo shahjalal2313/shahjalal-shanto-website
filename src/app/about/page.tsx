@@ -89,7 +89,7 @@ export default function AboutPage() {
             </div>
             <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
               <div className="font-bold text-lg text-orange-600">5⭐</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">20+ Projects</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">20+ Marketing Projects</div>
             </div>
           </div>
           
@@ -120,14 +120,15 @@ export default function AboutPage() {
             </h3>
             <div className="prose prose-lg text-gray-600 dark:text-gray-300">
               <p>
-                My journey began with a deep fascination for physical chemistry at the University of Chittagong, 
-                where I completed my MS in Physical Chemistry. I conducted research on &quot;Determination of pKa value 
-                of Weak Acid (Acetic acid) Using Conductometric measurement at different Temperature&quot; under the 
-                supervision of Associate Professor Mohammad Ashraf Uddin.
+                My academic journey began with a BSc in Chemistry from the University of Chittagong, followed by 
+                an MS in Physical Chemistry from the same institution. During my graduate studies, I conducted 
+                research on &quot;Determination of pKa value of Weak Acid (Acetic acid) Using Conductometric measurement 
+                at different Temperature&quot; under the supervision of Associate Professor Mohammad Ashraf Uddin.
               </p>
               <p>
-                This rigorous academic experience provided essential research methodologies, analytical thinking skills, 
-                and a deep appreciation for scientific rigor and ethical research practices.
+                This comprehensive academic foundation provided essential research methodologies, analytical thinking skills, 
+                and a deep appreciation for scientific rigor and ethical research practices, spanning both undergraduate 
+                and graduate levels of chemistry education.
               </p>
             </div>
           </div>
@@ -161,7 +162,7 @@ export default function AboutPage() {
               <p>
                 Complementing my technical expertise, I developed valuable digital communication and project management skills 
                 through social media marketing and strategy work with <strong>11+ international clients</strong> across diverse 
-                cultural and business backgrounds. Successfully delivered <strong>20+ marketing projects</strong> with consistent 
+                cultural and business backgrounds. Successfully delivered <strong>20+ social media marketing projects</strong> with consistent 
                 <strong>5-star client satisfaction</strong>, demonstrating adaptability and professional excellence in global digital environments.
               </p>
               <p>
@@ -281,7 +282,7 @@ export default function AboutPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span><strong>20+ marketing projects</strong> (5-star client satisfaction)</span>
+                  <span><strong>20+ social media marketing projects</strong> (5-star client satisfaction)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
@@ -374,7 +375,7 @@ export default function AboutPage() {
               <div className="text-center">
                 <div className="text-4xl font-bold text-blue-600 mb-2">MS</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">
-                  Physical Chemistry<br />University of Chittagong
+                  Physical Chemistry<br />BSc Chemistry | University of Chittagong
                 </div>
               </div>
               <div className="text-center">
@@ -392,7 +393,7 @@ export default function AboutPage() {
               <div className="text-center">
                 <div className="text-4xl font-bold text-orange-600 mb-2">20+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">
-                  Marketing Projects<br />5-Star Client Satisfaction
+                  Social Media Marketing Projects<br />5-Star Client Satisfaction
                 </div>
               </div>
               <div className="text-center">
