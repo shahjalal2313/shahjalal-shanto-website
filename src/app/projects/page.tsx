@@ -193,9 +193,9 @@ export default function ProjectsPage() {
 
                 {/* Links */}
                 <div className="flex gap-4">
-                  {project.liveUrl && (
+                  {(project as any).liveUrl && (
                     <a
-                      href={project.liveUrl}
+                      href={(project as any).liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
@@ -216,9 +216,9 @@ export default function ProjectsPage() {
                       </svg>
                     </a>
                   )}
-                  {project.githubUrl && (
+                  {(project as any).githubUrl && (
                     <a
-                      href={project.githubUrl}
+                      href={(project as any).githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
