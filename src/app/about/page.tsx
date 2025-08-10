@@ -1,159 +1,458 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: 'About - Shahjalal Shanto',
+  title: 'About - Shah Md. Jalal Uddin | Global Chemistry Professional',
   description:
-    'Graduate student with expertise in computational chemistry and web development. Pursuing advanced research opportunities in molecular analysis and scientific computing.',
+    'Chemistry professional with MS Physical Chemistry, 3+ years industry leadership at BSRM Steel, proven international collaboration across 11+ clients, and computational chemistry innovation. Seeking advanced research opportunities.',
+  keywords: [
+    'computational chemistry',
+    'international collaboration',
+    'steel quality assurance',
+    'cross-cultural communication',
+    'molecular analysis',
+    'graduate research',
+    'PhD applications',
+    'global partnerships'
+  ],
+  openGraph: {
+    title: 'Shah Md. Jalal Uddin - Global Chemistry Professional',
+    description: 'Bridging Chemistry, Industry, Innovation & Global Collaboration for Advanced Research',
+    type: 'profile',
+  },
 };
 
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Hero Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">About Me</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Graduate student passionate about computational chemistry and molecular analysis, 
-          with proven expertise in web development and scientific computing. Currently preparing 
-          for advanced research opportunities in MS/PhD programs.
-        </p>
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Enhanced Hero Section */}
+      <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        {/* Professional Photo */}
+        <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
+          <div className="relative">
+            <div className="w-80 h-96 bg-gray-200 dark:bg-gray-700 rounded-xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/professional-graduation.jpg"
+                alt="Shah Md. Jalal Uddin - Professional graduation photo"
+                width={320}
+                height={384}
+                className="professional-hero-image w-full h-full object-cover"
+                priority
+                sizes="(max-width: 768px) 300px, 320px"
+              />
+            </div>
+            {/* Global availability indicator */}
+            <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+              🌍 Open to International Opportunities
+            </div>
+          </div>
+        </div>
+        
+        {/* Enhanced Content */}
+        <div className="order-1 lg:order-2 text-center lg:text-left">
+          <div className="mb-6">
+            <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">
+              Shah Md. Jalal Uddin
+            </h1>
+            <p className="text-2xl font-medium text-blue-600 dark:text-blue-400 mb-6">
+              Bridging Chemistry, Industry, Innovation & Global Collaboration
+            </p>
+          </div>
+          
+          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+            Chemistry professional uniquely positioned at the intersection of academic theory, 
+            industrial application, computational innovation, and proven international collaboration. 
+            With MS Physical Chemistry, 3+ years quality assurance leadership at BSRM Steel, 
+            and demonstrated success across 11+ international clients, I bring exceptional 
+            cross-cultural collaboration skills alongside technical excellence to advanced research.
+          </p>
+          
+          {/* Credibility Indicators */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div className="font-bold text-lg text-blue-600">MS</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Physical Chemistry</div>
+            </div>
+            <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div className="font-bold text-lg text-green-600">3+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Years Industry</div>
+            </div>
+            <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div className="font-bold text-lg text-purple-600">11+</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Global Clients</div>
+            </div>
+            <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div className="font-bold text-lg text-orange-600">⭐⭐⭐⭐⭐</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">20+ Projects</div>
+            </div>
+          </div>
+          
+          {/* Call to Action */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <button className="btn-primary">
+              Explore Research Interests
+            </button>
+            <button className="btn-secondary">
+              Connect for Collaboration
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* Content Sections */}
       <div className="grid gap-12">
-        {/* Academic Background */}
+        {/* Professional Journey */}
         <section>
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-            Academic Background & Research Interests
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            Professional Journey
           </h2>
-          <div className="prose prose-lg text-gray-600 dark:text-gray-300">
-            <p>
-              I am Shah Md. Jalal Uddin, a dedicated graduate student with a strong foundation in 
-              computational chemistry and molecular analysis. My academic journey has been driven 
-              by a deep fascination with the intersection of chemistry, mathematics, and computational 
-              science, particularly in how these fields can be leveraged to solve complex molecular 
-              problems and advance scientific understanding.
-            </p>
-            <p>
-              My research interests center on computational chemistry, molecular modeling, and 
-              scientific data analysis. I have developed expertise in SMILES molecular notation, 
-              chemical data processing, and the development of analytical tools for molecular 
-              research. Through projects like my Molecular Analyzer application, I have demonstrated 
-              the ability to bridge theoretical chemistry concepts with practical computational 
-              implementations.
-            </p>
-            <p>
-              I am actively seeking opportunities to pursue advanced graduate studies (MS/PhD) 
-              where I can contribute to cutting-edge research in computational chemistry, 
-              molecular dynamics, or related interdisciplinary fields that combine chemistry 
-              with computer science and data analysis.
-            </p>
+          
+          {/* Academic Foundation */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              Academic Foundation & Research Excellence
+            </h3>
+            <div className="prose prose-lg text-gray-600 dark:text-gray-300">
+              <p>
+                My journey began with a deep fascination for physical chemistry at the University of Chittagong, 
+                where I completed my MS in Physical Chemistry. I conducted research on &quot;Determination of pKa value 
+                of Weak Acid (Acetic acid) Using Conductometric measurement at different Temperature&quot; under the 
+                supervision of Associate Professor Mohammad Ashraf Uddin.
+              </p>
+              <p>
+                This rigorous academic experience provided essential research methodologies, analytical thinking skills, 
+                and a deep appreciation for scientific rigor and ethical research practices.
+              </p>
+            </div>
+          </div>
+          
+          {/* Industry Leadership */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              Industry Leadership & Advanced Practical Application
+            </h3>
+            <div className="prose prose-lg text-gray-600 dark:text-gray-300">
+              <p>
+                Since July 2022, I have served as Assistant Executive at BSRM Steel, where my role has evolved into 
+                comprehensive leadership over <strong>3+ years</strong>. I lead quality assurance programs through 
+                advanced chemical and spectrometric analysis, manage complex shift operations, and successfully 
+                implement international standards (ASTM, ISO) ensuring global compliance.
+              </p>
+              <p>
+                This extensive industrial experience has provided deep insight into how theoretical chemistry principles 
+                scale from laboratory to large-scale industrial applications, while developing my leadership competencies 
+                and analytical problem-solving abilities.
+              </p>
+            </div>
+          </div>
+          
+          {/* International Collaboration */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              International Collaboration & Global Communication Excellence
+            </h3>
+            <div className="prose prose-lg text-gray-600 dark:text-gray-300">
+              <p>
+                Parallel to my expanding industry role, I developed specialized expertise in international collaboration 
+                through strategic consulting. I achieved remarkable success working with <strong>11+ international clients</strong> 
+                from diverse cultural and business backgrounds, completing <strong>20+ strategic projects</strong> with 
+                consistent <strong>5-star satisfaction ratings</strong>.
+              </p>
+              <p>
+                This experience directly translates to research collaboration readiness, including the ability to 
+                communicate complex concepts across cultural boundaries, manage international partnerships, and 
+                contribute effectively to multicultural research teams.
+              </p>
+            </div>
+          </div>
+          
+          {/* Technical Innovation */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              Technical Innovation & Computational Chemistry Advancement
+            </h3>
+            <div className="prose prose-lg text-gray-600 dark:text-gray-300">
+              <p>
+                Driven by passion for innovation, I independently developed the <strong>Molecular Analyzer</strong> application—a 
+                comprehensive web-based tool built with Python and Streamlit. This project showcases SMILES notation processing, 
+                molecular structure visualization, and chemical property calculations, demonstrating my ability to integrate 
+                traditional chemistry with cutting-edge technology.
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Skills */}
+        {/* Enhanced Skills Matrix */}
         <section>
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-            Technical Expertise
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            Core Competencies & Evidence
           </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-                Computational Chemistry & Scientific Computing
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Research & Analytical Excellence */}
+            <div className="skill-card p-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <span className="mr-3 text-2xl">🔬</span>
+                Research & Analytical Excellence
               </h3>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                <li>• SMILES Molecular Notation & Analysis</li>
-                <li>• Chemical Data Processing & Validation</li>
-                <li>• Python Scientific Libraries (NumPy, Pandas, RDKit)</li>
-                <li>• Molecular Modeling & Structure Analysis</li>
-                <li>• Scientific Data Visualization (Matplotlib, Seaborn)</li>
-                <li>• Research Methodology & Statistical Analysis</li>
+              <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+                <li className="flex items-start">
+                  <span className="mr-2 text-blue-600">✓</span>
+                  <span><strong>3+ years</strong> industrial analytical experience</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-blue-600">✓</span>
+                  <span>Advanced chemical & spectrometric analysis</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-blue-600">✓</span>
+                  <span>Statistical analysis & data interpretation</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-blue-600">✓</span>
+                  <span>International standards (ASTM, ISO) implementation</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-blue-600">✓</span>
+                  <span>Graduate-level research methodology</span>
+                </li>
               </ul>
             </div>
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-                Software Development & Web Technologies
+            
+            {/* Technical & Computational Skills */}
+            <div className="skill-card p-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <span className="mr-3 text-2xl">💻</span>
+                Technical & Computational
               </h3>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                <li>• Python Programming & Algorithm Development</li>
-                <li>• Next.js & React for Scientific Applications</li>
-                <li>• TypeScript & Modern JavaScript</li>
-                <li>• Streamlit for Interactive Data Applications</li>
-                <li>• Git Version Control & Collaborative Development</li>
-                <li>• Database Design & Scientific Data Management</li>
+              <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600">✓</span>
+                  <span>Python (NumPy, Pandas, RDKit, Streamlit)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600">✓</span>
+                  <span>SMILES notation & molecular modeling</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600">✓</span>
+                  <span>Next.js, TypeScript & React development</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600">✓</span>
+                  <span>Scientific data visualization & analysis</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600">✓</span>
+                  <span><strong>Molecular Analyzer</strong> application development</span>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Global Communication & Collaboration */}
+            <div className="skill-card p-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <span className="mr-3 text-2xl">🌍</span>
+                Global Communication
+              </h3>
+              <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+                <li className="flex items-start">
+                  <span className="mr-2 text-purple-600">✓</span>
+                  <span><strong>11+ international clients</strong> collaboration</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-purple-600">✓</span>
+                  <span><strong>20+ projects</strong> with 5-star ratings</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-purple-600">✓</span>
+                  <span>Cross-cultural communication excellence</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-purple-600">✓</span>
+                  <span>Strategic project management</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-purple-600">✓</span>
+                  <span>Professional relationship building</span>
+                </li>
               </ul>
             </div>
           </div>
         </section>
 
-        {/* Research Philosophy */}
+        {/* Research Philosophy & Global Readiness */}
         <section>
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-            Research Philosophy & Academic Values
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            Research Philosophy & Global Readiness
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center p-6 gradient-blue rounded-xl skill-card">
+              <div className="text-3xl mb-3">🔬</div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
                 Scientific Rigor
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
+              <p className="text-sm text-gray-600 dark:text-gray-300">
                 Committed to maintaining the highest standards of scientific 
-                methodology, data validation, and reproducible research practices 
-                in all computational and experimental work.
+                methodology, data validation, and reproducible research practices.
               </p>
             </div>
-            <div className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
-                Interdisciplinary Collaboration
+            
+            <div className="text-center p-6 gradient-green rounded-xl skill-card">
+              <div className="text-3xl mb-3">🌐</div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                Global Collaboration
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Passionate about bridging chemistry, computer science, and mathematics 
-                to create innovative solutions for complex molecular analysis and 
-                scientific computing challenges.
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Proven ability to work effectively across cultural boundaries 
+                with demonstrated success in international partnerships.
               </p>
             </div>
-            <div className="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
-                Continuous Learning
+            
+            <div className="text-center p-6 gradient-purple rounded-xl skill-card">
+              <div className="text-3xl mb-3">🤝</div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                Interdisciplinary Innovation
               </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                Dedicated to staying current with emerging technologies and 
-                methodologies in computational chemistry, always seeking to 
-                expand knowledge and contribute to scientific advancement.
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Passionate about bridging chemistry, industry, and technology 
+                to create innovative solutions for complex challenges.
+              </p>
+            </div>
+            
+            <div className="text-center p-6 gradient-orange rounded-xl skill-card">
+              <div className="text-3xl mb-3">📈</div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                Continuous Growth
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Dedicated to lifelong learning and staying current with emerging 
+                technologies in computational chemistry and research methods.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Academic Achievements & Future Goals */}
+        {/* Achievements & Future Vision */}
         <section>
-          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
-            Academic Achievements & Future Goals
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            Achievements & Future Research Vision
           </h2>
+          
+          {/* Achievement Highlights */}
+          <div className="achievement-card p-8 mb-12">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">
+              Professional Excellence Across Domains
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-4xl font-bold text-blue-600 mb-2">MS</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">
+                  Physical Chemistry<br />University of Chittagong
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-green-600 mb-2">3+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">
+                  Years Industry Leadership<br />BSRM Steel Quality Assurance
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-purple-600 mb-2">11+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">
+                  International Clients<br />Cross-Cultural Success
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-orange-600 mb-2">20+</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">
+                  Strategic Projects<br />5-Star Satisfaction
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-red-600 mb-2">1</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">
+                  Molecular Analyzer<br />Live Application
+                </div>
+              </div>
+              <div className="text-center">
+                <div className="text-4xl font-bold text-indigo-600 mb-2">🌍</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300">
+                  Global Collaboration<br />Ready for Research
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Future Research Vision */}
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-                Current Projects & Accomplishments
+            <div className="skill-card p-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <span className="mr-3 text-2xl">🎯</span>
+                Immediate Research Interests
               </h3>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                <li>• Developed comprehensive Molecular Analyzer application using Python and Streamlit</li>
-                <li>• Implemented SMILES molecular notation validation and analysis algorithms</li>
-                <li>• Created scientific data visualization tools for molecular property analysis</li>
-                <li>• Built professional academic website using modern web technologies</li>
-                <li>• Demonstrated proficiency in scientific computing and data analysis</li>
+              <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+                <li className="flex items-start">
+                  <span className="mr-2 text-blue-600 text-lg">•</span>
+                  <span><strong>AI-Enhanced Computational Chemistry</strong> with molecular property prediction</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-blue-600 text-lg">•</span>
+                  <span><strong>Materials Science Innovation</strong> with industrial applications</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-blue-600 text-lg">•</span>
+                  <span><strong>Chemical Informatics</strong> and analytical tool development</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-blue-600 text-lg">•</span>
+                  <span><strong>International Research Collaborations</strong> in computational chemistry</span>
+                </li>
               </ul>
             </div>
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-3">
-                Graduate School Objectives
+            
+            <div className="skill-card p-6">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
+                <span className="mr-3 text-2xl">🚀</span>
+                Long-term Academic Vision
               </h3>
-              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                <li>• Pursue MS/PhD in Computational Chemistry or related interdisciplinary field</li>
-                <li>• Contribute to research in molecular dynamics and quantum chemistry</li>
-                <li>• Develop novel computational methods for chemical analysis</li>
-                <li>• Publish research in peer-reviewed scientific journals</li>
-                <li>• Collaborate with research teams on cutting-edge projects</li>
+              <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600 text-lg">•</span>
+                  <span><strong>Graduate Research Excellence</strong> in computational chemistry PhD programs</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600 text-lg">•</span>
+                  <span><strong>International Research Partnerships</strong> leveraging proven collaboration skills</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600 text-lg">•</span>
+                  <span><strong>Innovative Tool Development</strong> for the global scientific community</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600 text-lg">•</span>
+                  <span><strong>Knowledge Bridge Building</strong> between academia and industry applications</span>
+                </li>
               </ul>
+            </div>
+          </div>
+          
+          {/* Call to Action */}
+          <div className="text-center mt-12 p-8 bg-gradient-to-r from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl">
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+              Ready for Global Research Collaboration
+            </h3>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 max-w-3xl mx-auto">
+              My unique combination of academic excellence, industry leadership, international collaboration 
+              success, and technical innovation positions me to contribute meaningfully to advanced research 
+              in computational chemistry and materials science.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="btn-primary">
+                Discuss Research Opportunities
+              </button>
+              <button className="btn-primary" style={{background: 'linear-gradient(135deg, #10b981, #059669)'}}>
+                Download CV
+              </button>
             </div>
           </div>
         </section>

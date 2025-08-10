@@ -1,8 +1,47 @@
 @import 'tailwindcss';
 
 :root {
+  /* Base colors */
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Enhanced Academic Professional Palette */
+  --primary-blue: #2563eb;
+  --primary-blue-dark: #1d4ed8;
+  --secondary-gray: #475569;
+  --accent-green: #10b981;
+  --accent-purple: #8b5cf6;
+  --accent-orange: #f97316;
+  
+  /* International collaboration colors */
+  --global-blue: #3b82f6;
+  --collaboration-purple: #a855f7;
+  --success-green: #22c55e;
+  
+  /* Semantic colors */
+  --success: var(--accent-green);
+  --warning: var(--accent-orange);
+  --info: var(--primary-blue);
+  
+  /* Typography */
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  
+  /* Backgrounds */
+  --bg-card: #ffffff;
+  --bg-subtle: #f9fafb;
+  --bg-muted: #f3f4f6;
+  
+  /* Borders */
+  --border-light: #e5e7eb;
+  --border-medium: #d1d5db;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 @theme inline {
@@ -10,12 +49,51 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Extended theme colors for international appeal */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: var(--primary-blue);
+  --color-primary-600: var(--primary-blue-dark);
+  --color-primary-900: #1e3a8a;
+  
+  --color-secondary-50: #f8fafc;
+  --color-secondary-100: #f1f5f9;
+  --color-secondary-500: var(--secondary-gray);
+  --color-secondary-600: #334155;
+  --color-secondary-900: #0f172a;
+  
+  --color-success-50: #ecfdf5;
+  --color-success-500: var(--accent-green);
+  --color-success-600: #059669;
+  
+  --color-warning-50: #fff7ed;
+  --color-warning-500: var(--accent-orange);
+  --color-warning-600: #ea580c;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    
+    /* Dark mode academic professional colors */
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    
+    --bg-card: #111827;
+    --bg-subtle: #1f2937;
+    --bg-muted: #374151;
+    
+    --border-light: #374151;
+    --border-medium: #4b5563;
+    
+    /* Adjusted shadows for dark mode */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.3);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.3);
   }
 }
 
@@ -27,11 +105,259 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
 }
 
-/* Ensure smooth transitions for dark mode */
+/* Professional Enhancement Styles for About Section */
+
+/* Hero Section Professional Photo Styling */
+.professional-hero-image {
+  border-radius: 12px;
+  box-shadow: var(--shadow-xl);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--border-light);
+}
+
+.professional-hero-image:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+/* Enhanced Card Styling for Skills and Content */
+.skill-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-blue);
+}
+
+/* Professional Achievement Cards */
+.achievement-card {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-subtle) 100%);
+  border: 1px solid var(--border-light);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-green), var(--accent-purple));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.achievement-card:hover::before {
+  opacity: 1;
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Global Collaboration Indicators */
+.global-indicator {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.global-indicator::before {
+  content: '🌍';
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+/* Professional Typography Enhancements */
+.professional-heading {
+  background: linear-gradient(135deg, var(--text-primary), var(--primary-blue));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+/* Interactive Elements */
+.interactive-stat {
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.interactive-stat:hover {
+  transform: scale(1.05);
+}
+
+/* Button Enhancements */
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(135deg, var(--primary-blue-dark), #1e40af);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--border-medium);
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-subtle);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  transform: translateY(-1px);
+}
+
+/* Professional Gradients */
+.gradient-blue {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+}
+
+.gradient-orange {
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+}
+
+/* Dark mode gradient adjustments */
+@media (prefers-color-scheme: dark) {
+  .gradient-blue {
+    background: linear-gradient(135deg, rgb(30 58 138 / 0.2) 0%, rgb(29 78 216 / 0.2) 100%);
+  }
+  
+  .gradient-green {
+    background: linear-gradient(135deg, rgb(5 150 105 / 0.2) 0%, rgb(16 185 129 / 0.2) 100%);
+  }
+  
+  .gradient-purple {
+    background: linear-gradient(135deg, rgb(139 92 246 / 0.2) 0%, rgb(168 85 247 / 0.2) 100%);
+  }
+  
+  .gradient-orange {
+    background: linear-gradient(135deg, rgb(249 115 22 / 0.2) 0%, rgb(234 88 12 / 0.2) 100%);
+  }
+  
+  .professional-hero-image {
+    border-color: var(--border-medium);
+  }
+  
+  .skill-card {
+    background: var(--bg-card);
+    border-color: var(--border-light);
+  }
+  
+  .achievement-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-subtle) 100%);
+  }
+}
+
+/* Responsive Typography */
+@media (min-width: 640px) {
+  body {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+}
+
+@media (min-width: 1024px) {
+  .professional-hero-image {
+    max-width: 400px;
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .professional-hero-image,
+  .skill-card,
+  .achievement-card,
+  .interactive-stat,
+  .btn-primary,
+  .btn-secondary {
+    transition: none;
+  }
+  
+  .professional-hero-image:hover,
+  .skill-card:hover,
+  .achievement-card:hover,
+  .interactive-stat:hover,
+  .btn-primary:hover,
+  .btn-secondary:hover {
+    transform: none;
+  }
+}
+
+/* Focus states for accessibility */
+.btn-primary:focus,
+.btn-secondary:focus {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print styles for CV/academic purposes */
+@media print {
+  .btn-primary,
+  .btn-secondary {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-medium) !important;
+    box-shadow: none !important;
+  }
+  
+  .professional-hero-image {
+    box-shadow: none !important;
+    border: 1px solid var(--border-medium) !important;
+  }
+  
+  .skill-card,
+  .achievement-card {
+    box-shadow: none !important;
+    border: 1px solid var(--border-medium) !important;
+  }
+}
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
