@@ -55,16 +55,16 @@ export default function AboutPage() {
               Shah Md. Jalal Uddin
             </h1>
             <p className="text-2xl font-medium text-blue-600 dark:text-blue-400 mb-6">
-              Bridging Chemistry, Industry, Innovation & Global Collaboration
+              Bridging Chemistry, Industry, Innovation & Digital Communication
             </p>
           </div>
           
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
             Chemistry professional uniquely positioned at the intersection of academic theory, 
-            industrial application, computational innovation, and proven international collaboration. 
+            industrial application, computational innovation, and digital marketing expertise. 
             With MS Physical Chemistry, 3+ years quality assurance leadership at BSRM Steel, 
-            and demonstrated success across 11+ international clients, I bring exceptional 
-            cross-cultural collaboration skills alongside technical excellence to advanced research.
+            and successful social media marketing experience with 11+ international clients, I bring 
+            cross-cultural communication skills alongside technical excellence to advanced research.
           </p>
           
           {/* Credibility Indicators */}
@@ -79,7 +79,7 @@ export default function AboutPage() {
             </div>
             <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
               <div className="font-bold text-lg text-purple-600">11+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">International Collaborations</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Marketing Clients</div>
             </div>
             <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
               <div className="font-bold text-lg text-orange-600">5⭐</div>
@@ -149,19 +149,19 @@ export default function AboutPage() {
           {/* International Collaboration */}
           <div className="mb-12">
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              International Professional Communication & Cross-Cultural Excellence
+              Digital Communication & International Client Management
             </h3>
             <div className="prose prose-lg text-gray-600 dark:text-gray-300">
               <p>
-                Complementing my technical expertise, I developed exceptional cross-cultural communication skills through 
-                professional consulting work with <strong>11+ international clients</strong> across diverse cultural backgrounds. 
-                Successfully managed <strong>20+ strategic communication projects</strong> with consistent <strong>5-star ratings</strong>, 
-                demonstrating adaptability and professional excellence in multicultural environments.
+                Complementing my technical expertise, I developed valuable digital communication and project management skills 
+                through social media marketing and strategy work with <strong>11+ international clients</strong> across diverse 
+                cultural and business backgrounds. Successfully delivered <strong>20+ marketing projects</strong> with consistent 
+                <strong>5-star client satisfaction</strong>, demonstrating adaptability and professional excellence in global digital environments.
               </p>
               <p>
-                This international experience directly enhances my research collaboration readiness—essential skills for 
-                modern academic environments include communicating complex concepts across cultural boundaries, 
-                managing international research partnerships, and contributing effectively to diverse academic teams.
+                This experience cultivated essential modern academic skills: cross-cultural communication, digital content strategy, 
+                project management, and international collaboration—all increasingly valuable for research dissemination, 
+                grant writing, academic networking, and engaging with global scientific communities.
               </p>
             </div>
           </div>
@@ -248,32 +248,32 @@ export default function AboutPage() {
               </ul>
             </div>
             
-            {/* International Communication & Collaboration */}
+            {/* Digital Communication & Project Management */}
             <div className="skill-card p-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-                <span className="mr-3 text-2xl">🌍</span>
-                International Communication
+                <span className="mr-3 text-2xl">📱</span>
+                Digital Communication & Marketing
               </h3>
               <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span><strong>Cross-cultural professional communication</strong></span>
+                  <span><strong>Social media marketing</strong> strategy & execution</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span><strong>11+ international</strong> professional collaborations</span>
+                  <span><strong>11+ international clients</strong> across diverse markets</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span><strong>20+ strategic projects</strong> (5-star excellence)</span>
+                  <span><strong>20+ marketing projects</strong> (5-star client satisfaction)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span>Multicultural team collaboration</span>
+                  <span>Digital content strategy & campaign management</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-purple-600">✓</span>
-                  <span>Research collaboration readiness</span>
+                  <span>Cross-cultural communication & project delivery</span>
                 </li>
               </ul>
             </div>
@@ -300,11 +300,11 @@ export default function AboutPage() {
             <div className="text-center p-6 gradient-green rounded-xl skill-card">
               <div className="text-3xl mb-3">🌐</div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                Global Collaboration
+                Cross-Cultural Communication
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">
                 Proven ability to work effectively across cultural boundaries 
-                with demonstrated success in international partnerships.
+                through international marketing client relationships and digital communication.
               </p>
             </div>
             
@@ -359,13 +359,13 @@ export default function AboutPage() {
               <div className="text-center">
                 <div className="text-4xl font-bold text-purple-600 mb-2">11+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">
-                  International Collaborations<br />Cross-Cultural Excellence
+                  International Marketing Clients<br />Cross-Cultural Success
                 </div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-bold text-orange-600 mb-2">20+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">
-                  Professional Projects<br />5-Star Excellence
+                  Marketing Projects<br />5-Star Client Satisfaction
                 </div>
               </div>
               <div className="text-center">
@@ -375,9 +375,9 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-indigo-600 mb-2">🌍</div>
+                <div className="text-4xl font-bold text-indigo-600 mb-2">📱</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">
-                  Global Collaboration<br />Ready for Research
+                  Digital Communication<br />Cross-Cultural Skills
                 </div>
               </div>
             </div>
