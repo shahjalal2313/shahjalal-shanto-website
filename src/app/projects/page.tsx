@@ -21,6 +21,11 @@ interface Project {
   achievements: readonly string[];
 }
 
+type ProjectWithOptionalUrls = Project & {
+  liveUrl?: string;
+  githubUrl?: string;
+}
+
 export default function ProjectsPage() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -191,11 +196,11 @@ export default function ProjectsPage() {
                   ))}
                 </div>
 
-                {/* Links */}
+                {/* Project Links */}
                 <div className="flex gap-4">
-                  {(project as any).liveUrl && (
+                  {(project as ProjectWithOptionalUrls).liveUrl && (
                     <a
-                      href={(project as any).liveUrl}
+                      href={(project as ProjectWithOptionalUrls).liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
@@ -216,9 +221,9 @@ export default function ProjectsPage() {
                       </svg>
                     </a>
                   )}
-                  {(project as any).githubUrl && (
+                  {(project as ProjectWithOptionalUrls).githubUrl && (
                     <a
-                      href={(project as any).githubUrl}
+                      href={(project as ProjectWithOptionalUrls).githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
