@@ -101,27 +101,26 @@ export const PROJECTS_DATA = [
     shortDescription:
       'An automated system that generates inspiring quotes, creates beautiful images, and manages them through Google Sheets.',
     fullDescription:
-      'A comprehensive automation system that combines multiple AI technologies to generate inspirational quotes, create corresponding visual content, and manage the entire workflow through Google Sheets integration. The system uses Gemini API for intelligent quote generation, DALL-E for image creation, and includes sophisticated image editing capabilities to overlay quotes with proper typography and author attribution.',
-    technologies: ['Python', 'Google Gemini API', 'OpenAI DALL-E', 'Google Sheets API', 'PIL/Pillow', 'Automation'],
+      'Advanced automation system that combines multiple AI technologies to generate inspirational quotes, create corresponding visual content, and manage the entire workflow through Google Sheets integration. Features intelligent quote generation using Gemini API, image creation with DALL-E, and sophisticated image editing capabilities with proper typography and author attribution.',
+    technologies: ['Python', 'Gemini API', 'OpenAI DALL-E', 'Google Sheets', 'Pillow', 'Automation'],
     category: 'AI & Automation',
-    status: 'Completed',
+    status: 'Completed Project',
     githubUrl: 'https://github.com/shahjalal2313/Shahjalals-Project/tree/master/ai-quotes-generator',
     featured: false,
     timeline: '2024',
     features: [
-      'Automated quote generation using Gemini API with random topic selection',
-      'AI-powered image generation using OpenAI DALL-E',
-      'Advanced image editing with quote overlay and author attribution',
-      'Google Sheets integration for quote management and tracking',
-      'Comprehensive logging system for workflow monitoring',
-      'Automatic cleanup of temporary files and error handling'
+      'Automated quote generation with topic selection',
+      'AI-powered image creation using DALL-E',
+      'Image editing with quote overlay and typography',
+      'Google Sheets integration for data management',
+      'Comprehensive logging and error handling'
     ],
     achievements: [
-      'Complete end-to-end automation workflow implementation',
-      'Successfully integrated multiple AI APIs (Gemini, DALL-E)',
-      'Built robust Google Sheets data management system',
-      'Implemented comprehensive error handling and logging',
-      'Created modular architecture for easy maintenance and updates'
+      'End-to-end automation workflow implementation',
+      'Multiple AI APIs integration (Gemini, DALL-E)',
+      'Robust data management system',
+      'Modular architecture for maintainability',
+      'Automated file cleanup and processing'
     ]
   }
 ] as const;
