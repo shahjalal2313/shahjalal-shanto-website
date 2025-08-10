@@ -169,14 +169,20 @@ export default function AboutPage() {
           {/* Technical Innovation */}
           <div className="mb-12">
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              Technical Innovation & Computational Chemistry Advancement
+              AI-Enhanced Problem Solving & Technical Innovation
             </h3>
             <div className="prose prose-lg text-gray-600 dark:text-gray-300">
               <p>
-                Driven by passion for innovation, I independently developed the <strong>Molecular Analyzer</strong> application—a 
-                comprehensive web-based tool built with Python and Streamlit. This project showcases SMILES notation processing, 
-                molecular structure visualization, and chemical property calculations, demonstrating my ability to integrate 
-                traditional chemistry with cutting-edge technology.
+                Driven by innovation, I developed two significant technical projects that showcase modern research capabilities. 
+                The <strong>Molecular Analyzer</strong> application—a comprehensive Python and Streamlit tool for SMILES notation 
+                processing and molecular visualization—demonstrates my ability to integrate chemistry with computational technology.
+              </p>
+              <p>
+                Equally significant is this <strong>professional academic website</strong>, which I designed and developed despite 
+                having no formal web development background. By strategically leveraging AI tools (Claude, GitHub Copilot) combined 
+                with systematic problem-solving approaches, I created a modern Next.js application with TypeScript, responsive design, 
+                and professional presentation standards. This project exemplifies the <strong>AI-enhanced research methodology</strong> 
+                increasingly essential in modern academic environments.
               </p>
             </div>
           </div>
@@ -221,13 +227,21 @@ export default function AboutPage() {
             {/* Technical & Computational Skills */}
             <div className="skill-card p-6">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-                <span className="mr-3 text-2xl">💻</span>
-                Technical & Computational
+                <span className="mr-3 text-2xl">🤖</span>
+                AI-Enhanced Technical Skills
               </h3>
               <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start">
                   <span className="mr-2 text-green-600">✓</span>
+                  <span><strong>AI-assisted development</strong> (Claude, GitHub Copilot)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600">✓</span>
                   <span>Python (NumPy, Pandas, RDKit, Streamlit)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2 text-green-600">✓</span>
+                  <span>Next.js, TypeScript & React (AI-enhanced learning)</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-green-600">✓</span>
@@ -235,15 +249,7 @@ export default function AboutPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-green-600">✓</span>
-                  <span>Next.js, TypeScript & React development</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-green-600">✓</span>
-                  <span>Scientific data visualization & analysis</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-green-600">✓</span>
-                  <span><strong>Molecular Analyzer</strong> application development</span>
+                  <span><strong>Two major projects:</strong> Molecular Analyzer & This Website</span>
                 </li>
               </ul>
             </div>
@@ -285,7 +291,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             Research Philosophy & Global Readiness
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             <div className="text-center p-6 gradient-blue rounded-xl skill-card">
               <div className="text-3xl mb-3">🔬</div>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
@@ -329,6 +335,17 @@ export default function AboutPage() {
                 technologies in computational chemistry and research methods.
               </p>
             </div>
+            
+            <div className="text-center p-6 bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900/20 dark:to-indigo-800/20 rounded-xl skill-card">
+              <div className="text-3xl mb-3">🤖</div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+                AI-Enhanced Methodology
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Proficient in leveraging AI tools for research acceleration, problem-solving, 
+                and technical development—essential skills for modern scientific research.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -369,9 +386,9 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-red-600 mb-2">1</div>
+                <div className="text-4xl font-bold text-red-600 mb-2">2</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">
-                  Molecular Analyzer<br />Live Application
+                  Technical Projects<br />AI-Enhanced Development
                 </div>
               </div>
               <div className="text-center">
@@ -393,15 +410,15 @@ export default function AboutPage() {
               <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start">
                   <span className="mr-2 text-blue-600 text-lg">•</span>
-                  <span><strong>AI-Enhanced Computational Chemistry</strong> with molecular property prediction</span>
+                  <span><strong>AI-Enhanced Computational Chemistry</strong> leveraging modern ML tools</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-blue-600 text-lg">•</span>
-                  <span><strong>Materials Science Innovation</strong> with industrial applications</span>
+                  <span><strong>Digital Research Methodologies</strong> combining AI tools with traditional methods</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-blue-600 text-lg">•</span>
-                  <span><strong>Chemical Informatics</strong> and analytical tool development</span>
+                  <span><strong>Scientific Tool Development</strong> using AI-assisted programming approaches</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-blue-600 text-lg">•</span>
