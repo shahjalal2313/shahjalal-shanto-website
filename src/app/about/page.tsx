@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'About - Shah Md. Jalal Uddin | Global Chemistry Professional',
@@ -41,9 +42,14 @@ export default function AboutPage() {
                 sizes="(max-width: 768px) 300px, 320px"
               />
             </div>
-            {/* Global availability indicator */}
-            <div className="absolute -bottom-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
-              🌍 Open to International Opportunities
+            {/* Professional name caption */}
+            <div className="mt-4 text-center">
+              <p className="text-lg font-medium text-gray-900 dark:text-white">
+                Shah Md. Jalal Uddin
+              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                Chemistry Professional & Research Enthusiast
+              </p>
             </div>
           </div>
         </div>
@@ -89,12 +95,12 @@ export default function AboutPage() {
           
           {/* Call to Action */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <button className="btn-primary">
-              Explore Research Interests
-            </button>
-            <button className="btn-secondary">
+            <Link href="/projects" className="btn-primary text-center">
+              Explore My Projects
+            </Link>
+            <Link href="/contact" className="btn-secondary text-center">
               Connect for Collaboration
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -160,7 +166,7 @@ export default function AboutPage() {
               </p>
               <p>
                 This experience cultivated essential modern academic skills: cross-cultural communication, digital content strategy, 
-                project management, and international collaboration—all increasingly valuable for research dissemination, 
+                project management, and international collaboration—all increasingly valuable for <Link href="/blog" className="text-blue-600 dark:text-blue-400 hover:underline">research dissemination</Link>, 
                 grant writing, academic networking, and engaging with global scientific communities.
               </p>
             </div>
@@ -174,11 +180,15 @@ export default function AboutPage() {
             <div className="prose prose-lg text-gray-600 dark:text-gray-300">
               <p>
                 Driven by innovation, I developed two significant technical projects that showcase modern research capabilities. 
-                The <strong>Molecular Analyzer</strong> application—a comprehensive Python and Streamlit tool for SMILES notation 
+                The <Link href="/projects" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  <strong>Molecular Analyzer</strong>
+                </Link> application—a comprehensive Python and Streamlit tool for SMILES notation 
                 processing and molecular visualization—demonstrates my ability to integrate chemistry with computational technology.
               </p>
               <p>
-                Equally significant is this <strong>professional academic website</strong>, which I designed and developed despite 
+                Equally significant is this <Link href="/projects" className="text-blue-600 dark:text-blue-400 hover:underline font-semibold">
+                  <strong>professional academic website</strong>
+                </Link>, which I designed and developed despite 
                 having no formal web development background. By strategically leveraging AI tools (Claude, GitHub Copilot) combined 
                 with systematic problem-solving approaches, I created a modern Next.js application with TypeScript, responsive design, 
                 and professional presentation standards. This project exemplifies the <strong>AI-enhanced research methodology</strong> 
@@ -249,7 +259,7 @@ export default function AboutPage() {
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-green-600">✓</span>
-                  <span><strong>Two major projects:</strong> Molecular Analyzer & This Website</span>
+                  <span><strong>Two major projects:</strong> <Link href="/projects" className="text-blue-600 dark:text-blue-400 hover:underline">Molecular Analyzer & This Website</Link></span>
                 </li>
               </ul>
             </div>
@@ -464,12 +474,12 @@ export default function AboutPage() {
               in computational chemistry and materials science.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary">
+              <Link href="/contact" className="btn-primary text-center">
                 Discuss Research Opportunities
-              </button>
-              <button className="btn-primary" style={{background: 'linear-gradient(135deg, #10b981, #059669)'}}>
-                Download CV
-              </button>
+              </Link>
+              <Link href="/projects" className="btn-primary text-center" style={{background: 'linear-gradient(135deg, #10b981, #059669)'}}>
+                View All Projects
+              </Link>
             </div>
           </div>
         </section>
