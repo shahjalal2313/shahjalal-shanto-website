@@ -5,7 +5,7 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'About - Shah Md. Jalal Uddin | Global Chemistry Professional',
   description:
-    'Chemistry professional with MS Physical Chemistry, 3+ years industry leadership at BSRM Steel, proven international collaboration across 11+ clients, and computational chemistry innovation. Seeking advanced research opportunities.',
+    'Chemistry professional with MS Physical Chemistry, 3+ years industry Experience at BSRM Steel, proven international collaboration across 11+ clients, and computational chemistry innovation. Seeking advanced research opportunities.',
   keywords: [
     'computational chemistry',
     'international collaboration',
@@ -68,7 +68,7 @@ export default function AboutPage() {
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
             Chemistry professional uniquely positioned at the intersection of academic theory, 
             industrial application, computational innovation, and digital marketing expertise. 
-            With MS Physical Chemistry, 3+ years quality assurance leadership at BSRM Steel, 
+            With MS Physical Chemistry, 3+ years quality assurance Experience at BSRM Steel, 
             and successful social media marketing experience with 11+ international clients, I bring 
             cross-cultural communication skills alongside technical excellence to advanced research.
           </p>
@@ -81,11 +81,11 @@ export default function AboutPage() {
             </div>
             <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
               <div className="font-bold text-lg text-green-600">3+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">Years Industry</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Years Industry Experience</div>
             </div>
             <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
-              <div className="font-bold text-lg text-purple-600">11+</div>
-              <div className="text-sm text-gray-600 dark:text-gray-300">Marketing Clients</div>
+              <div className="font-bold text-lg text-purple-600">3</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300">Techincal Projects</div>
             </div>
             <div className="text-center p-3 interactive-stat bg-gray-50 dark:bg-gray-800 rounded-lg">
               <div className="font-bold text-lg text-orange-600">5⭐</div>
@@ -141,7 +141,7 @@ export default function AboutPage() {
             <div className="prose prose-lg text-gray-600 dark:text-gray-300">
               <p>
                 Since July 2022, I have served as Assistant Executive at BSRM Steel, where my role has evolved into 
-                comprehensive leadership over <strong>3+ years</strong>. I lead quality assurance programs through 
+                comprehensive Experiemce over <strong>3+ years</strong>. I contributed to quality assurance programs through 
                 advanced chemical and spectrometric analysis, manage complex shift operations, and successfully 
                 implement international standards (ASTM, ISO) ensuring global compliance.
               </p>
@@ -381,7 +381,7 @@ export default function AboutPage() {
               <div className="text-center">
                 <div className="text-4xl font-bold text-green-600 mb-2">3+</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">
-                  Years Industry Leadership<br />BSRM Steel Quality Assurance
+                  Years Industry Experience<br />BSRM Steel Quality Assurance
                 </div>
               </div>
               <div className="text-center">
@@ -397,7 +397,7 @@ export default function AboutPage() {
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-red-600 mb-2">2</div>
+                <div className="text-4xl font-bold text-red-600 mb-2">3</div>
                 <div className="text-sm text-gray-600 dark:text-gray-300">
                   Technical Projects<br />AI-Enhanced Development
                 </div>
@@ -446,7 +446,7 @@ export default function AboutPage() {
               <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                 <li className="flex items-start">
                   <span className="mr-2 text-green-600 text-lg">•</span>
-                  <span><strong>Graduate Research Excellence</strong> in computational chemistry PhD programs</span>
+                  <span><strong>Graduate Research Excellence</strong> in computational chemistry MS/PhD programs</span>
                 </li>
                 <li className="flex items-start">
                   <span className="mr-2 text-green-600 text-lg">•</span>

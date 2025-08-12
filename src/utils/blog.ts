@@ -118,6 +118,7 @@ export async function getAllBlogPosts(): Promise<BlogPostMeta[]> {
       if (!post) return null;
       
       // Return only metadata, not full content
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const { content, ...meta } = post;
       return meta;
     })
