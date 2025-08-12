@@ -7,37 +7,59 @@ import emailjs from '@emailjs/browser';
 import { SITE_CONFIG } from '@/lib/constants';
 
 // --- Local, Reusable Components ---
-const SectionTitle = ({ children }) => (
+interface SectionTitleProps {
+  children: React.ReactNode;
+}
+
+const SectionTitle = ({ children }: SectionTitleProps) => (
   <h1 className="text-4xl sm:text-5xl font-sans font-bold text-foreground mb-6">{children}</h1>
 );
 
-const Card = ({ children, className = '' }) => (
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const Card = ({ children, className = '' }: CardProps) => (
   <div className={`bg-card border border-border rounded-lg shadow-lg ${className}`}>{children}</div>
 );
 
-const Input = (props) => (
+const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => (
   <input {...props} className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50" />
 );
 
-const Select = (props) => (
-  <select {...props} className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50" />
-);
 
-const Textarea = (props) => (
+
+const Textarea = (props: React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
   <textarea {...props} className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 resize-vertical" />
 );
 
-const Label = ({ htmlFor, children }) => (
+interface LabelProps {
+  htmlFor: string;
+  children: React.ReactNode;
+}
+
+const Label = ({ htmlFor, children }: LabelProps) => (
   <label htmlFor={htmlFor} className="block text-sm font-sans font-semibold text-muted mb-2">{children}</label>
 );
 
-const Button = ({ children, disabled }) => (
+interface ButtonProps {
+  children: React.ReactNode;
+  disabled?: boolean;
+}
+
+const Button = ({ children, disabled }: ButtonProps) => (
   <button type="submit" disabled={disabled} className="w-full bg-primary text-primary-foreground py-3 px-6 rounded-md font-sans font-semibold hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
     {children}
   </button>
 );
 
-const Alert = ({ children, type }) => {
+interface AlertProps {
+  children: React.ReactNode;
+  type: 'success' | 'error';
+}
+
+const Alert = ({ children, type }: AlertProps) => {
   const variants = {
     success: "bg-green-500/10 border-green-500/20 text-green-700",
     error: "bg-red-500/10 border-red-500/20 text-red-700",
@@ -51,12 +73,12 @@ export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('idle');
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');

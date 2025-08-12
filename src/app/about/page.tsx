@@ -9,7 +9,13 @@ export const metadata: Metadata = {
 };
 
 // Reusable components defined locally for this page
-const Button = ({ href, children, variant = 'primary' }) => {
+interface ButtonProps {
+  href: string;
+  children: React.ReactNode;
+  variant?: 'primary' | 'secondary';
+}
+
+const Button = ({ href, children, variant = 'primary' }: ButtonProps) => {
   const baseClasses = "px-6 py-3 rounded-md font-semibold font-sans shadow-md hover:shadow-lg transition-all duration-300 text-center";
   const variants = {
     primary: "bg-primary text-primary-foreground hover:bg-primary/90",
@@ -23,7 +29,12 @@ const Button = ({ href, children, variant = 'primary' }) => {
   );
 };
 
-const Card = ({ children, className = '' }) => {
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const Card = ({ children, className = '' }: CardProps) => {
   return (
     <div className={`bg-card border border-border rounded-lg shadow-md p-6 sm:p-8 ${className}`}>
       {children}
@@ -31,7 +42,11 @@ const Card = ({ children, className = '' }) => {
   );
 };
 
-const SectionTitle = ({ children }) => {
+interface SectionTitleProps {
+  children: React.ReactNode;
+}
+
+const SectionTitle = ({ children }: SectionTitleProps) => {
   return (
     <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-12 text-center">
       {children}

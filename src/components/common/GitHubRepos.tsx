@@ -3,7 +3,12 @@
 import { useState, useEffect } from 'react';
 
 // --- Local, Reusable Components ---
-const Card = ({ children, className = '' }) => {
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const Card = ({ children, className = '' }: CardProps) => {
   return (
     <div className={`bg-card border border-border rounded-lg p-6 flex flex-col h-full transition-shadow hover:shadow-lg ${className}`}>
       {children}
@@ -11,7 +16,11 @@ const Card = ({ children, className = '' }) => {
   );
 };
 
-const Tag = ({ children }) => {
+interface TagProps {
+  children: React.ReactNode;
+}
+
+const Tag = ({ children }: TagProps) => {
   return (
     <span className="inline-block px-2 py-1 bg-secondary/10 text-secondary-foreground border border-secondary/20 rounded-full text-xs font-medium">
       {children}
@@ -19,7 +28,7 @@ const Tag = ({ children }) => {
   );
 };
 
-const Button = ({ href, children }) => {
+const Button = ({ href }: { href: string }) => {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className="inline-block mt-auto pt-4 text-center font-sans font-semibold text-primary hover:underline">
       View Repository →
@@ -28,10 +37,25 @@ const Button = ({ href, children }) => {
 };
 
 // --- Main Component ---
-export default function GitHubRepos({ username = 'shahjalal-shanto', maxRepos = 6 }) {
-  const [repos, setRepos] = useState([]);
+interface GitHubRepo {
+  id: number;
+  name: string;
+  description: string | null;
+  html_url: string;
+  language: string | null;
+  stargazers_count: number;
+  topics?: string[];
+}
+
+interface GitHubReposProps {
+  username?: string;
+  maxRepos?: number;
+}
+
+export default function GitHubRepos({ username = 'shahjalal-shanto', maxRepos = 6 }: GitHubReposProps) {
+  const [repos, setRepos] = useState<GitHubRepo[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchRepos = async () => {
@@ -41,7 +65,7 @@ export default function GitHubRepos({ username = 'shahjalal-shanto', maxRepos = 
         const data = await response.json();
         setRepos(data);
       } catch (err) {
-        setError(err.message);
+        setError(err instanceof Error ? err.message : 'An error occurred');
       } finally {
         setLoading(false);
       }
@@ -61,9 +85,13 @@ export default function GitHubRepos({ username = 'shahjalal-shanto', maxRepos = 
 }
 
 // --- State & Sub-Components ---
-const RepoCard = ({ repo }) => {
-  const getLanguageColor = (language) => {
-    const colors = { 'TypeScript': '#2b7489', 'Python': '#3572a5' };
+interface RepoCardProps {
+  repo: GitHubRepo;
+}
+
+const RepoCard = ({ repo }: RepoCardProps) => {
+  const getLanguageColor = (language: string) => {
+    const colors: Record<string, string> = { 'TypeScript': '#2b7489', 'Python': '#3572a5' };
     return colors[language] || '#64748b';
   };
 
@@ -80,7 +108,7 @@ const RepoCard = ({ repo }) => {
         </p>
         {repo.topics && repo.topics.length > 0 && (
           <div className="flex flex-wrap gap-1 mb-4">
-            {repo.topics.slice(0, 3).map(topic => <Tag key={topic}>{topic}</Tag>)}
+            {repo.topics.slice(0, 3).map((topic: string) => <Tag key={topic}>{topic}</Tag>)}
           </div>
         )}
         <div className="flex items-center justify-between text-sm text-muted font-sans">
@@ -107,7 +135,11 @@ const LoadingState = () => (
   </div>
 );
 
-const ErrorState = ({ message }) => (
+interface ErrorStateProps {
+  message: string;
+}
+
+const ErrorState = ({ message }: ErrorStateProps) => (
   <div className="text-center py-8 col-span-full">
     <p className="text-red-500 font-sans">Error: {message}</p>
   </div>

@@ -9,8 +9,9 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }): Promise<Metadata> {
-  const post = await getBlogPost(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
   if (!post) return { title: 'Post Not Found' };
 
   return {
@@ -30,15 +31,16 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 }
 
 // --- Local, Reusable Components ---
-const Tag = ({ children }) => (
+const Tag = ({ children }: { children: string }) => (
   <Link href={`/blog/tag/${children.toLowerCase()}`} className="inline-block px-3 py-1 bg-secondary/10 text-secondary-foreground border border-secondary/20 rounded-full text-xs font-medium transition-colors hover:bg-secondary/20">
     #{children}
   </Link>
 );
 
 // --- Main Page Component ---
-export default async function BlogPostPage({ params }) {
-  const post = await getBlogPost(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getBlogPost(slug);
   if (!post) notFound();
 
   return (

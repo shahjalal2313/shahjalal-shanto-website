@@ -7,14 +7,19 @@ export interface NavigationItem {
 }
 
 export interface ProjectItem {
-  id: string;
-  title: string;
-  description: string;
-  technologies: string[];
-  liveUrl?: string;
-  githubUrl?: string;
-  imageUrl?: string;
-  featured: boolean;
+  readonly id: string;
+  readonly title: string;
+  readonly shortDescription: string;
+  readonly fullDescription: string;
+  readonly technologies: readonly string[];
+  readonly category: string;
+  readonly status: string;
+  readonly liveUrl?: string;
+  readonly githubUrl: string;
+  readonly featured: boolean;
+  readonly timeline: string;
+  readonly features: readonly string[];
+  readonly achievements: readonly string[];
 }
 
 export interface BlogPost {
@@ -39,4 +44,15 @@ export interface SocialLink {
   platform: string;
   url: string;
   icon: string;
+  description?: string;
+}
+
+export interface GitHubRepo {
+  id: number;
+  name: string;
+  description: string | null;
+  html_url: string;
+  language: string | null;
+  stargazers_count: number;
+  topics?: string[];
 }

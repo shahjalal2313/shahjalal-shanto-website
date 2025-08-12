@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllBlogPosts, formatDate } from '@/utils/blog';
+import { getAllBlogPosts, formatDate, type BlogPostMeta } from '@/utils/blog';
 
 // --- Metadata ---
 export const metadata: Metadata = {
@@ -9,7 +9,12 @@ export const metadata: Metadata = {
 };
 
 // --- Local, Reusable Components ---
-const Button = ({ children, variant = 'primary' }) => {
+interface ButtonProps {
+  children: React.ReactNode;
+  variant?: 'primary';
+}
+
+const Button = ({ children, variant = 'primary' }: ButtonProps) => {
   const baseClasses = "px-6 py-2 rounded-md font-semibold font-sans shadow-md hover:shadow-lg transition-all duration-300 text-center";
   const variants = {
     primary: "bg-primary text-primary-foreground hover:bg-primary/90",
@@ -17,15 +22,28 @@ const Button = ({ children, variant = 'primary' }) => {
   return <button className={`${baseClasses} ${variants[variant]}`}>{children}</button>;
 };
 
-const Card = ({ children, className = '' }) => (
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const Card = ({ children, className = '' }: CardProps) => (
   <article className={`bg-card border border-border rounded-lg shadow-md p-6 flex flex-col h-full transition-shadow hover:shadow-lg ${className}`}>{children}</article>
 );
 
-const Tag = ({ children }) => (
-  <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary-foreground border border-secondary/20 rounded-full text-xs font-medium">{children}</span>
+interface TagProps {
+  children: string;
+}
+
+const Tag = ({ children }: TagProps) => (
+  <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary-foreground border border-border rounded-full text-xs font-medium">{children}</span>
 );
 
-const SectionTitle = ({ children }) => (
+interface SectionTitleProps {
+  children: React.ReactNode;
+}
+
+const SectionTitle = ({ children }: SectionTitleProps) => (
   <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-8">{children}</h2>
 );
 
@@ -74,7 +92,12 @@ export default async function BlogPage() {
 }
 
 // --- Sub-Components for the Page ---
-const PostCard = ({ post, layout = 'vertical' }) => {
+interface PostCardProps {
+  post: BlogPostMeta;
+  layout?: 'vertical' | 'horizontal';
+}
+
+const PostCard = ({ post, layout = 'vertical' }: PostCardProps) => {
   if (layout === 'horizontal') {
     return (
       <Card className="md:flex-row md:items-center">

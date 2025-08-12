@@ -2,6 +2,17 @@
 
 import { useState, useEffect } from 'react';
 
+interface Course {
+  title: string;
+  provider: string;
+  status: string;
+  completionDate: string;
+  description: string;
+  skills: string[];
+  certificateUrl: string | null;
+  courseUrl: string;
+}
+
 // --- MOCK DATA (as provided in the original file) ---
 const learningCategories = [
   {
@@ -24,7 +35,13 @@ const learningCategories = [
 const learningStats = { totalCourses: 11, completedCourses: 6, inProgressCourses: 4, totalHours: 253, certificatesEarned: 5 };
 
 // --- Local, Reusable Components ---
-const Button = ({ href, children, variant = 'primary' }) => {
+interface ButtonProps {
+  href: string;
+  children: React.ReactNode;
+  variant?: 'primary' | 'secondary';
+}
+
+const Button = ({ href, children, variant = 'primary' }: ButtonProps) => {
   const baseClasses = "inline-block px-6 py-3 rounded-md font-semibold font-sans shadow-md hover:shadow-lg transition-all duration-300 text-center";
   const variants = {
     primary: "bg-primary text-primary-foreground hover:bg-primary/90",
@@ -33,24 +50,37 @@ const Button = ({ href, children, variant = 'primary' }) => {
   return <a href={href} target="_blank" rel="noopener noreferrer" className={`${baseClasses} ${variants[variant]}`}>{children}</a>;
 };
 
-const Card = ({ children, className = '' }) => (
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const Card = ({ children, className = '' }: CardProps) => (
   <div className={`bg-card border border-border rounded-lg shadow-md p-6 flex flex-col h-full ${className}`}>{children}</div>
 );
 
-const Tag = ({ children }) => (
+interface TagProps {
+  children: string;
+}
+
+const Tag = ({ children }: TagProps) => (
   <span className="inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-medium">{children}</span>
 );
 
-const SectionTitle = ({ children }) => (
+interface SectionTitleProps {
+  children: React.ReactNode;
+}
+
+const SectionTitle = ({ children }: SectionTitleProps) => (
   <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-8">{children}</h2>
 );
 
 // --- Main Page Component ---
 export default function LearningJourneyPage() {
-  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
   useEffect(() => {
-    const handleEscape = (e) => e.key === 'Escape' && setSelectedCourse(null);
+    const handleEscape = (e: KeyboardEvent) => e.key === 'Escape' && setSelectedCourse(null);
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
   }, []);
@@ -89,14 +119,24 @@ export default function LearningJourneyPage() {
 }
 
 // --- Sub-Components for the Page ---
-const StatCard = ({ value, label }) => (
+interface StatCardProps {
+  value: string | number;
+  label: string;
+}
+
+const StatCard = ({ value, label }: StatCardProps) => (
   <Card className="text-center items-center justify-center p-4">
     <div className="text-3xl font-sans font-bold text-primary">{value}</div>
     <div className="text-sm text-muted font-sans mt-1">{label}</div>
   </Card>
 );
 
-const CourseCard = ({ course, onSelect }) => (
+interface CourseCardProps {
+  course: Course;
+  onSelect: () => void;
+}
+
+const CourseCard = ({ course, onSelect }: CourseCardProps) => (
   <Card>
     <div className="flex-grow">
       <p className="text-sm font-sans text-muted mb-1">{course.provider}</p>
@@ -114,13 +154,18 @@ const CourseCard = ({ course, onSelect }) => (
     <div className="mt-auto pt-4 border-t border-border">
       <div className="flex flex-wrap gap-2">
         {course.skills.slice(0, 3).map(skill => <Tag key={skill}>{skill}</Tag>)}
-        {course.skills.length > 3 && <Tag>+{course.skills.length - 3} more</Tag>}
+        {course.skills.length > 3 && <Tag>{`+${course.skills.length - 3} more`}</Tag>}
       </div>
     </div>
   </Card>
 );
 
-const CourseModal = ({ course, onClose }) => (
+interface CourseModalProps {
+  course: Course;
+  onClose: () => void;
+}
+
+const CourseModal = ({ course, onClose }: CourseModalProps) => (
   <div className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 animate-fade-in" onClick={onClose}>
     <div className="bg-card rounded-xl shadow-2xl max-w-2xl max-h-[90vh] w-full flex flex-col animate-slide-up" onClick={(e) => e.stopPropagation()}>
       <div className="p-6 border-b border-border flex justify-between items-start">

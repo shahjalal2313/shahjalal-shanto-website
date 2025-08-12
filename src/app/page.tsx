@@ -4,7 +4,14 @@ import Link from 'next/link';
 import { EXTERNAL_PROJECTS } from '@/lib/constants';
 
 // A simple, reusable Button component for this page
-const Button = ({ href, children, variant = 'primary', as = 'link' }) => {
+interface ButtonProps {
+  href: string;
+  children: React.ReactNode;
+  variant?: 'primary' | 'secondary';
+  as?: 'link' | 'button';
+}
+
+const Button = ({ href, children, variant = 'primary', as = 'link' }: ButtonProps) => {
   const baseClasses = "px-6 py-3 rounded-md font-semibold font-sans shadow-md hover:shadow-lg transition-all duration-300 text-center";
   const variants = {
     primary: "bg-primary text-primary-foreground hover:bg-primary/90",
@@ -27,7 +34,12 @@ const Button = ({ href, children, variant = 'primary', as = 'link' }) => {
 };
 
 // A reusable Card component
-const Card = ({ children, className = '' }) => {
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const Card = ({ children, className = '' }: CardProps) => {
   return (
     <div className={`bg-card border border-border rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 ${className}`}>
       {children}
@@ -36,7 +48,11 @@ const Card = ({ children, className = '' }) => {
 };
 
 // A reusable Tag component
-const Tag = ({ children }) => {
+interface TagProps {
+  children: string;
+}
+
+const Tag = ({ children }: TagProps) => {
   return (
     <span className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-medium">
       {children}
@@ -130,7 +146,7 @@ export default function Home() {
           Let&apos;s Collaborate
         </h2>
         <p className="text-xl text-muted font-serif mb-8 max-w-2xl mx-auto">
-          I am actively seeking opportunities to contribute to innovative research and development projects. If you're looking for a dedicated and skilled professional, let's connect.
+          I am actively seeking opportunities to contribute to innovative research and development projects. If you&apos;re looking for a dedicated and skilled professional, let&apos;s connect.
         </p>
         <Button href="/contact">Get in Touch</Button>
       </section>

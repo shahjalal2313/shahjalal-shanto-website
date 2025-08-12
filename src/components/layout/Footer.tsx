@@ -12,7 +12,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-sans font-semibold mb-4">{SITE_CONFIG.name}</h3>
             <blockquote className="border-l-2 border-primary pl-4 text-muted italic text-sm font-serif">
-              "Technology should not just support science—it should accelerate it."
+              &ldquo;Technology should not just support science—it should accelerate it.&rdquo;
             </blockquote>
           </div>
 

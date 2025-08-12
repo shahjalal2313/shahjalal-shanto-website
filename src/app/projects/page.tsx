@@ -5,8 +5,32 @@ import { useState, useEffect } from 'react';
 import { PROJECTS_DATA } from '@/lib/constants';
 import GitHubRepos from '@/components/common/GitHubRepos';
 
+interface Project {
+  readonly id: string;
+  readonly title: string;
+  readonly shortDescription: string;
+  readonly fullDescription: string;
+  readonly technologies: readonly string[];
+  readonly category: string;
+  readonly status: string;
+  readonly liveUrl?: string;
+  readonly githubUrl: string;
+  readonly featured: boolean;
+  readonly timeline: string;
+  readonly features: readonly string[];
+  readonly achievements: readonly string[];
+}
+
 // --- Local, Reusable Components ---
-const Button = ({ href, children, variant = 'primary', as = 'link', ...props }) => {
+interface ButtonProps {
+  href: string;
+  children: React.ReactNode;
+  variant?: 'primary' | 'secondary';
+  as?: 'link' | 'button';
+  [key: string]: React.HTMLAttributes<HTMLButtonElement> | string | React.ReactNode;
+}
+
+const Button = ({ href, children, variant = 'primary', as = 'link', ...props }: ButtonProps) => {
   const baseClasses = "inline-block px-6 py-3 rounded-md font-semibold font-sans shadow-md hover:shadow-lg transition-all duration-300 text-center";
   const variants = {
     primary: "bg-primary text-primary-foreground hover:bg-primary/90",
@@ -28,7 +52,12 @@ const Button = ({ href, children, variant = 'primary', as = 'link', ...props }) 
   );
 };
 
-const Card = ({ children, className = '' }) => {
+interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
+const Card = ({ children, className = '' }: CardProps) => {
   return (
     <div className={`bg-card border border-border rounded-lg shadow-md p-6 flex flex-col h-full ${className}`}>
       {children}
@@ -36,7 +65,11 @@ const Card = ({ children, className = '' }) => {
   );
 };
 
-const Tag = ({ children }) => {
+interface TagProps {
+  children: string;
+}
+
+const Tag = ({ children }: TagProps) => {
   return (
     <span className="inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-medium">
       {children}
@@ -44,7 +77,11 @@ const Tag = ({ children }) => {
   );
 };
 
-const SectionTitle = ({ children }) => {
+interface SectionTitleProps {
+  children: React.ReactNode;
+}
+
+const SectionTitle = ({ children }: SectionTitleProps) => {
   return (
     <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-8">
       {children}
@@ -54,10 +91,10 @@ const SectionTitle = ({ children }) => {
 
 // --- Main Page Component ---
 export default function ProjectsPage() {
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
-    const handleEscape = (e) => {
+    const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setSelectedProject(null);
       }
@@ -117,7 +154,12 @@ export default function ProjectsPage() {
 }
 
 // --- Sub-Components for the Page ---
-const ProjectCard = ({ project, onSelect }) => {
+interface ProjectCardProps {
+  project: Project;
+  onSelect: () => void;
+}
+
+const ProjectCard = ({ project, onSelect }: ProjectCardProps) => {
   return (
     <Card>
       <div className="flex-grow">
@@ -131,7 +173,7 @@ const ProjectCard = ({ project, onSelect }) => {
           Read Full Details →
         </button>
         <div className="flex flex-wrap gap-2 mb-6">
-          {project.technologies.slice(0, 4).map((tech) => (
+          {project.technologies.slice(0, 4).map((tech: string) => (
             <Tag key={tech}>{tech}</Tag>
           ))}
         </div>
@@ -144,7 +186,12 @@ const ProjectCard = ({ project, onSelect }) => {
   );
 };
 
-const ProjectModal = ({ project, onClose }) => {
+interface ProjectModalProps {
+  project: Project;
+  onClose: () => void;
+}
+
+const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   return (
     <div 
       className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 animate-fade-in"
@@ -172,13 +219,13 @@ const ProjectModal = ({ project, onClose }) => {
             <div>
               <h3 className="font-sans font-semibold text-foreground mb-2">Key Features</h3>
               <ul className="list-disc list-inside space-y-1 font-serif text-muted">
-                {project.features.map((feature, i) => <li key={i}>{feature}</li>)}
+                {project.features.map((feature: string, i: number) => <li key={i}>{feature}</li>)}
               </ul>
             </div>
             <div>
               <h3 className="font-sans font-semibold text-foreground mb-2">Technologies</h3>
               <div className="flex flex-wrap gap-2">
-                {project.technologies.map(tech => <Tag key={tech}>{tech}</Tag>)}
+                {project.technologies.map((tech: string) => <Tag key={tech}>{tech}</Tag>)}
               </div>
             </div>
           </div>
