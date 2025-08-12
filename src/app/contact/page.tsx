@@ -147,7 +147,7 @@ export default function ContactPage() {
               <h3 className="text-xl font-sans font-semibold text-foreground mb-4">Collaboration Interests</h3>
               <div className="flex flex-wrap gap-2">
                 {['Computational Chemistry', 'Molecular Modeling', 'Scientific Computing', 'Research', 'Web Apps'].map(tag => 
-                  <span key={tag} className="inline-block px-3 py-1 bg-secondary/10 text-secondary-foreground border border-secondary/20 rounded-full text-xs font-medium">{tag}</span>
+                  <span key={tag} className="inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-medium">{tag}</span>
                 )}
               </div>
             </div>

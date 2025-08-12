@@ -36,7 +36,7 @@ interface TagProps {
 }
 
 const Tag = ({ children }: TagProps) => (
-  <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary-foreground border border-border rounded-full text-xs font-medium">{children}</span>
+  <span className="inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-medium">{children}</span>
 );
 
 interface SectionTitleProps {

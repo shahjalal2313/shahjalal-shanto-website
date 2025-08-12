@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 // --- Local, Reusable Components ---
 const Tag = ({ children }: { children: string }) => (
-  <Link href={`/blog/tag/${children.toLowerCase()}`} className="inline-block px-3 py-1 bg-secondary/10 text-secondary-foreground border border-secondary/20 rounded-full text-xs font-medium transition-colors hover:bg-secondary/20">
+  <Link href={`/blog/tag/${children.toLowerCase()}`} className="inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-medium transition-colors hover:bg-primary/20">
     #{children}
   </Link>
 );

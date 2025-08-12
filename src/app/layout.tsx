@@ -137,6 +137,7 @@ export default function RootLayout({
       </head>
       <body
         className={`antialiased min-h-screen flex flex-col bg-background text-foreground font-serif`}
+        suppressHydrationWarning={true}
       >
         <Header />
         <main className="flex-grow">{children}</main>

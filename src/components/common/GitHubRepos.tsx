@@ -22,7 +22,7 @@ interface TagProps {
 
 const Tag = ({ children }: TagProps) => {
   return (
-    <span className="inline-block px-2 py-1 bg-secondary/10 text-secondary-foreground border border-secondary/20 rounded-full text-xs font-medium">
+    <span className="inline-block px-2 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-xs font-medium">
       {children}
     </span>
   );
