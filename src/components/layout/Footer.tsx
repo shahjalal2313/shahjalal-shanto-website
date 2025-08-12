@@ -5,57 +5,42 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 dark:bg-gray-950 text-white">
-      <div className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-card text-card-foreground border-t border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Philosophy & Brand */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">{SITE_CONFIG.name}</h3>
-            <blockquote className="border-l-2 border-blue-500 pl-4 text-gray-300 italic text-sm">
+            <h3 className="text-lg font-sans font-semibold mb-4">{SITE_CONFIG.name}</h3>
+            <blockquote className="border-l-2 border-primary pl-4 text-muted italic text-sm font-serif">
               "Technology should not just support science—it should accelerate it."
             </blockquote>
           </div>
 
           {/* Navigation (Explore) */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-center">Explore</h3>
-            <div className="grid grid-cols-3 gap-2">
-              <Link
-                href="/about"
-                className="text-gray-300 hover:text-white text-sm transition-all duration-200 hover:translate-x-1"
-              >
-                → About
+            <h3 className="text-lg font-sans font-semibold mb-4">Explore</h3>
+            <div className="grid grid-cols-2 gap-2">
+              <Link href="/about" className="text-muted hover:text-primary text-sm transition-colors font-sans">
+                About
               </Link>
-              <Link
-                href="/projects"
-                className="text-gray-300 hover:text-white text-sm transition-all duration-200 hover:translate-x-1"
-              >
-                → Projects
+              <Link href="/projects" className="text-muted hover:text-primary text-sm transition-colors font-sans">
+                Projects
               </Link>
-              <Link
-                href="/learning"
-                className="text-gray-300 hover:text-white text-sm transition-all duration-200 hover:translate-x-1"
-              >
-                → Learning
+              <Link href="/learning" className="text-muted hover:text-primary text-sm transition-colors font-sans">
+                Learning
               </Link>
-              <Link
-                href="/blog"
-                className="text-gray-300 hover:text-white text-sm transition-all duration-200 hover:translate-x-1"
-              >
-                → Blog
+              <Link href="/blog" className="text-muted hover:text-primary text-sm transition-colors font-sans">
+                Blog
               </Link>
-              <Link
-                href="/contact"
-                className="text-gray-300 hover:text-white text-sm transition-all duration-200 hover:translate-x-1"
-              >
-                → Contact
+              <Link href="/contact" className="text-muted hover:text-primary text-sm transition-colors font-sans">
+                Contact
               </Link>
             </div>
           </div>
 
           {/* Connect (Social Links) */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect</h3>
+            <h3 className="text-lg font-sans font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4">
               {SOCIAL_LINKS.map((link) => (
                 <a
@@ -63,7 +48,7 @@ export default function Footer() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-blue-400 transition-colors"
+                  className="text-muted hover:text-primary transition-colors"
                   aria-label={`Visit ${link.platform}`}
                 >
                   <span className="sr-only">{link.platform}</span>
@@ -89,19 +74,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
-            <p className="text-gray-400 text-sm">
+        <div className="border-t border-border mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-muted text-sm">
               © {currentYear} {SITE_CONFIG.name}. All rights reserved.
             </p>
-            <div className="flex items-center space-x-4 text-gray-400 text-sm">
-              <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
+            <div className="flex items-center space-x-4 text-muted text-sm font-sans">
+              <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
               <span>•</span>
-              <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+              <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
             </div>
-            <p className="text-gray-400 text-sm">
-              Academic Portfolio • Built with Next.js and TypeScript
-            </p>
           </div>
         </div>
       </div>

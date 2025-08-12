@@ -1,183 +1,129 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllBlogPosts, getFeaturedBlogPosts, formatDate } from '@/utils/blog';
+import { getAllBlogPosts, formatDate } from '@/utils/blog';
 
+// --- Metadata ---
 export const metadata: Metadata = {
   title: 'Blog - Shahjalal Shanto',
-  description:
-    'Technical articles and insights on computational chemistry, web development, and scientific computing. Sharing knowledge from the intersection of technology and science.',
-  keywords: [
-    'computational chemistry',
-    'web development',
-    'scientific computing',
-    'technical writing',
-    'research',
-    'next.js',
-    'molecular modeling'
-  ],
+  description: 'Technical articles and insights on computational chemistry, web development, and scientific computing.',
 };
 
+// --- Local, Reusable Components ---
+const Button = ({ children, variant = 'primary' }) => {
+  const baseClasses = "px-6 py-2 rounded-md font-semibold font-sans shadow-md hover:shadow-lg transition-all duration-300 text-center";
+  const variants = {
+    primary: "bg-primary text-primary-foreground hover:bg-primary/90",
+  };
+  return <button className={`${baseClasses} ${variants[variant]}`}>{children}</button>;
+};
+
+const Card = ({ children, className = '' }) => (
+  <article className={`bg-card border border-border rounded-lg shadow-md p-6 flex flex-col h-full transition-shadow hover:shadow-lg ${className}`}>{children}</article>
+);
+
+const Tag = ({ children }) => (
+  <span className="inline-block px-3 py-1 bg-secondary/10 text-secondary-foreground border border-secondary/20 rounded-full text-xs font-medium">{children}</span>
+);
+
+const SectionTitle = ({ children }) => (
+  <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-8">{children}</h2>
+);
+
+// --- Main Page Component ---
 export default async function BlogPage() {
   const allPosts = await getAllBlogPosts();
-  const featuredPosts = await getFeaturedBlogPosts();
+  const featuredPosts = allPosts.filter((post) => post.featured);
   const otherPosts = allPosts.filter((post) => !post.featured);
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      {/* Hero Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">Blog</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Technical articles and insights on software engineering, web
-          development, and computational chemistry. Sharing knowledge and
-          experiences from the intersection of technology and science.
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24 my-16 md:my-24">
+      <section className="text-center">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans font-bold text-foreground mb-6">Blog</h1>
+        <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted font-serif leading-relaxed">
+          Technical articles and insights on software engineering, web development, and computational chemistry.
         </p>
-      </div>
-
-      {/* Featured Posts */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-semibold text-gray-900 mb-8">
-          Featured Articles
-        </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {featuredPosts.map((post) => (
-            <article
-              key={post.slug}
-              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
-            >
-              <div className="flex items-center text-sm text-gray-500 mb-3">
-                <time>{formatDate(post.publishedAt)}</time>
-                <span className="mx-2">•</span>
-                <span>{post.readingTime} min read</span>
-              </div>
-
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="hover:text-blue-600 transition-colors"
-                >
-                  {post.title}
-                </Link>
-              </h3>
-
-              <p className="text-gray-600 mb-4">{post.excerpt}</p>
-
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <Link
-                href={`/blog/${post.slug}`}
-                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
-              >
-                Read More
-                <svg
-                  className="ml-2 w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </Link>
-            </article>
-          ))}
-        </div>
       </section>
 
-      {/* Other Posts */}
-      {otherPosts.length > 0 && (
+      {featuredPosts.length > 0 && (
         <section>
-          <h2 className="text-2xl font-semibold text-gray-900 mb-8">
-            More Articles
-          </h2>
-          <div className="space-y-6">
-            {otherPosts.map((post) => (
-              <article
-                key={post.slug}
-                className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow"
-              >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center text-sm text-gray-500 mb-2">
-                      <time>{formatDate(post.publishedAt)}</time>
-                      <span className="mx-2">•</span>
-                      <span>{post.readingTime} min read</span>
-                    </div>
-
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      <Link
-                        href={`/blog/${post.slug}`}
-                        className="hover:text-blue-600 transition-colors"
-                      >
-                        {post.title}
-                      </Link>
-                    </h3>
-
-                    <p className="text-gray-600 mb-3">{post.excerpt}</p>
-
-                    <div className="flex flex-wrap gap-2">
-                      {post.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-2 py-1 bg-gray-100 text-gray-700 text-sm rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="mt-4 md:mt-0 md:ml-6">
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-                    >
-                      Read
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
+          <SectionTitle>Featured Articles</SectionTitle>
+          <div className="grid md:grid-cols-2 gap-8">
+            {featuredPosts.map((post) => <PostCard key={post.slug} post={post} />)}
           </div>
         </section>
       )}
 
-      {/* Newsletter Signup */}
-      <div className="text-center mt-16 p-8 bg-gray-50 rounded-lg">
-        <h3 className="text-xl font-semibold text-gray-900 mb-4">
-          Stay Updated
-        </h3>
-        <p className="text-gray-600 mb-6">
-          Get notified when new articles are published. No spam, just quality
-          content about technology and science.
-        </p>
-        <div className="max-w-md mx-auto">
-          <div className="flex gap-4">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <button className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors">
-              Subscribe
-            </button>
+      {otherPosts.length > 0 && (
+        <section>
+          <SectionTitle>More Articles</SectionTitle>
+          <div className="space-y-8">
+            {otherPosts.map((post) => <PostCard key={post.slug} post={post} layout="horizontal" />)}
           </div>
-        </div>
-      </div>
+        </section>
+      )}
+
+      {allPosts.length === 0 && (
+        <section className="text-center">
+            <p className="text-muted font-serif">No blog posts found. Check back soon!</p>
+        </section>
+      )}
+
+      <NewsletterSignup />
     </div>
   );
 }
+
+// --- Sub-Components for the Page ---
+const PostCard = ({ post, layout = 'vertical' }) => {
+  if (layout === 'horizontal') {
+    return (
+      <Card className="md:flex-row md:items-center">
+        <div className="flex-grow">
+          <p className="text-sm text-muted font-sans mb-2">{formatDate(post.publishedAt)} • {post.readingTime} min read</p>
+          <h3 className="text-xl font-sans font-semibold text-foreground mb-2">
+            <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors">{post.title}</Link>
+          </h3>
+          <p className="text-muted font-serif mb-4 text-sm">{post.excerpt}</p>
+          <div className="flex flex-wrap gap-2">
+            {post.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
+          </div>
+        </div>
+        <Link href={`/blog/${post.slug}`} className="mt-4 md:mt-0 md:ml-6 text-primary font-sans font-semibold hover:underline flex-shrink-0">Read More →</Link>
+      </Card>
+    );
+  }
+
+  return (
+    <Card>
+      <div className="flex-grow">
+        <p className="text-sm text-muted font-sans mb-2">{formatDate(post.publishedAt)} • {post.readingTime} min read</p>
+        <h3 className="text-xl font-sans font-semibold text-foreground mb-3">
+          <Link href={`/blog/${post.slug}`} className="hover:text-primary transition-colors">{post.title}</Link>
+        </h3>
+        <p className="text-muted font-serif mb-4">{post.excerpt}</p>
+      </div>
+      <div className="mt-auto pt-4 border-t border-border">
+        <div className="flex flex-wrap gap-2 mb-4">
+          {post.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
+        </div>
+        <Link href={`/blog/${post.slug}`} className="text-primary font-sans font-semibold hover:underline">Read More →</Link>
+      </div>
+    </Card>
+  );
+};
+
+const NewsletterSignup = () => (
+  <Card className="items-center text-center p-8 md:p-12 bg-primary/5">
+    <h3 className="text-2xl font-sans font-bold text-foreground mb-2">Stay Updated</h3>
+    <p className="text-muted font-serif mb-6 max-w-md">Get notified when new articles are published. No spam, just quality content.</p>
+    <form className="w-full max-w-md flex flex-col sm:flex-row gap-3">
+      <input 
+        type="email" 
+        placeholder="Enter your email"
+        className="flex-grow px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50"
+        aria-label="Email for newsletter"
+      />
+      <Button>Subscribe</Button>
+    </form>
+  </Card>
+);

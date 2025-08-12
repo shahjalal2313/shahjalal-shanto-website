@@ -1,18 +1,22 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans, Lora } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { SITE_CONFIG } from '@/lib/constants';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-sans',
+  weight: ['600', '700'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const lora = Lora({
   subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-serif',
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
@@ -120,7 +124,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={`${plusJakartaSans.variable} ${lora.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -128,11 +132,11 @@ export default function RootLayout({
         />
         <link rel="canonical" href={SITE_CONFIG.url} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#2563eb" />
+        <meta name="theme-color" content="#0d47a1" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`antialiased min-h-screen flex flex-col bg-background text-foreground font-serif`}
       >
         <Header />
         <main className="flex-grow">{children}</main>
