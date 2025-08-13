@@ -82,9 +82,8 @@ export default function AboutPage() {
           <p className="font-serif text-lg text-muted leading-relaxed mb-8">
             I am a chemistry professional at the intersection of academic theory, industrial application, and computational innovation. My journey through physical chemistry, steel manufacturing, and AI-assisted development has given me a unique, multidisciplinary approach to solving complex problems.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex justify-center">
             <Button href="/contact">📄 Request CV</Button>
-            <Button href="/contact" variant="secondary">Get in Touch</Button>
           </div>
         </div>
       </section>
