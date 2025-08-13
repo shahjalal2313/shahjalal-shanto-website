@@ -74,7 +74,7 @@ export default function GitHubRepos({ username = 'shahjalal-shanto', maxRepos = 
   }, [username, maxRepos]);
 
   if (loading) return <LoadingState />;
-  if (error) return <ErrorState message={error} />;
+  if (error) return <ErrorState />;
   if (repos.length === 0) return <EmptyState />;
 
   return (
@@ -135,11 +135,9 @@ const LoadingState = () => (
   </div>
 );
 
-interface ErrorStateProps {
-  message: string;
-}
 
-const ErrorState = (props: ErrorStateProps) => (
+
+const ErrorState = () => (
   <div className="text-center py-12 col-span-full bg-card border border-border rounded-lg p-8">
     <div className="text-4xl mb-4">🚀</div>
     <h3 className="text-xl font-sans font-semibold text-foreground mb-3">

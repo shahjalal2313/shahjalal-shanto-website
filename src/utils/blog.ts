@@ -1,8 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import remarkGfm from 'remark-gfm';
+// import { compile } from '@mdx-js/mdx';
+// import remarkGfm from 'remark-gfm';
 
 const postsDirectory = path.join(process.cwd(), 'src/content/blog');
 
@@ -16,6 +16,11 @@ export interface BlogPost {
   tags: string[];
   featured: boolean;
   readingTime: number;
+  category?: string;
+  difficulty?: 'beginner' | 'intermediate' | 'advanced';
+  interactive?: boolean;
+  components?: string[];
+  series?: string;
   author: {
     name: string;
     email: string;
@@ -31,6 +36,11 @@ export interface BlogPostMeta {
   tags: string[];
   featured: boolean;
   readingTime: number;
+  category?: string;
+  difficulty?: 'beginner' | 'intermediate' | 'advanced';
+  interactive?: boolean;
+  components?: string[];
+  series?: string;
   author: {
     name: string;
     email: string;
@@ -80,23 +90,26 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
     const fileContents = fs.readFileSync(fullPath, 'utf8');
     const { data, content } = matter(fileContents);
     
-    // Process markdown content
-    const processedContent = await remark()
-      .use(remarkGfm)
-      .process(content);
-    
     const readingTime = calculateReadingTime(content);
+    
+    // Return raw MDX content for client-side processing
+    const compiledContent = content;
     
     return {
       slug,
       title: data.title || 'Untitled',
       excerpt: data.excerpt || '',
-      content: processedContent.toString(),
+      content: compiledContent,
       publishedAt: data.publishedAt || new Date().toISOString(),
       updatedAt: data.updatedAt,
       tags: data.tags || [],
       featured: data.featured || false,
       readingTime,
+      category: data.category,
+      difficulty: data.difficulty,
+      interactive: data.interactive || false,
+      components: data.components || [],
+      series: data.series,
       author: data.author || {
         name: 'SHAH MD. JALAL UDDIN',
         email: 'Shahjalal2313@gmail.com',

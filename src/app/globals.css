@@ -185,12 +185,10 @@ Prose Content Styles (for MDX)
 }
 
 .prose-content pre {
-  background-color: var(--card);
-  border: 1px solid var(--border);
   border-radius: var(--border-radius-lg);
-  padding: 1.5em;
   overflow-x: auto;
   font-size: 0.9em;
+  white-space: pre-wrap;
 }
 
 .prose-content code {
@@ -203,13 +201,7 @@ Prose Content Styles (for MDX)
   padding: 0;
 }
 
-.prose-content :not(pre) > code {
-  background-color: var(--primary-foreground);
-  color: var(--primary);
-  padding: 0.2em 0.4em;
-  border-radius: var(--border-radius-sm);
-  font-size: 0.9em;
-}
+
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {

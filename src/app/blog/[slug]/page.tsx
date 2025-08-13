@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getBlogPost, getAllBlogSlugs, formatDate } from '@/utils/blog';
+import MDXRenderer from '@/components/MDXRenderer';
 
 // --- Metadata Generation ---
 export async function generateStaticParams() {
@@ -62,12 +63,29 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <div className="flex flex-wrap gap-2 justify-center mt-6">
           {post.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
         </div>
+        
+        {post.interactive && (
+          <div className="mt-4 text-center">
+            <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
+              🚀 Interactive Content
+            </span>
+          </div>
+        )}
+        
+        {post.difficulty && (
+          <div className="mt-2 text-center">
+            <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${
+              post.difficulty === 'beginner' ? 'bg-green-100 text-green-800' :
+              post.difficulty === 'intermediate' ? 'bg-yellow-100 text-yellow-800' :
+              'bg-red-100 text-red-800'
+            }`}>
+              {post.difficulty.charAt(0).toUpperCase() + post.difficulty.slice(1)} Level
+            </span>
+          </div>
+        )}
       </header>
 
-      <div 
-        className="prose-content"
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+      <MDXRenderer content={post.content} />
 
       <footer className="mt-12 pt-8 border-t border-border text-center">
         <p className="text-muted font-sans">Share this article</p>

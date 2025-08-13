@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Plus_Jakarta_Sans, Lora } from 'next/font/google';
 import './globals.css';
+import 'highlight.js/styles/github.css';
+import 'highlight.js/styles/github-dark.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { SITE_CONFIG } from '@/lib/constants';
