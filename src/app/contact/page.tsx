@@ -28,7 +28,9 @@ const Input = (props: React.InputHTMLAttributes<HTMLInputElement>) => (
   <input {...props} className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50" />
 );
 
-
+const Select = (props: React.SelectHTMLAttributes<HTMLSelectElement>) => (
+  <select {...props} className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50" />
+);
 
 const Textarea = (props: React.TextareaHTMLAttributes<HTMLTextAreaElement>) => (
   <textarea {...props} className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 resize-vertical" />
@@ -69,11 +71,11 @@ const Alert = ({ children, type }: AlertProps) => {
 
 // --- Main Page Component ---
 export default function ContactPage() {
-  const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', organization: '', requestType: '', subject: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState('idle');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
@@ -92,10 +94,18 @@ export default function ContactPage() {
         throw new Error("EmailJS environment variables are not configured.");
       }
 
-      await emailjs.send(serviceId, templateId, { from_name: formData.name, from_email: formData.email, subject: formData.subject, message: formData.message, reply_to: formData.email }, publicKey);
+      await emailjs.send(serviceId, templateId, { 
+        from_name: formData.name, 
+        from_email: formData.email, 
+        organization: formData.organization,
+        request_type: formData.requestType,
+        subject: formData.subject, 
+        message: formData.message, 
+        reply_to: formData.email 
+      }, publicKey);
       
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', organization: '', requestType: '', subject: '', message: '' });
     } catch (error) {
       setSubmitStatus('error');
       console.error('Form submission error:', error);
@@ -109,14 +119,14 @@ export default function ContactPage() {
       <header className="text-center mb-12">
         <SectionTitle>Contact & Collaboration</SectionTitle>
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-muted font-serif leading-relaxed">
-          I welcome opportunities for research collaboration, academic discussions, and professional partnerships. Let&apos;s advance science together.
+          I welcome opportunities for research collaboration, academic discussions, and professional partnerships. For CV requests, please provide your details and I&apos;ll send it directly after verification.
         </p>
       </header>
 
       <Card className="p-8 md:p-12">
         <div className="grid md:grid-cols-2 gap-12">
           <form onSubmit={handleSubmit} className="space-y-6">
-            {submitStatus === 'success' && <Alert type="success">Thank you for your message! I&apos;ll get back to you soon.</Alert>}
+            {submitStatus === 'success' && <Alert type="success">Thank you for your request! I&apos;ll review your information and respond within 24 hours. For CV requests, I&apos;ll send it directly to your email after verification.</Alert>}
             {submitStatus === 'error' && <Alert type="error">Sorry, there was an error. Please try again or email me directly.</Alert>}
             
             <div>
@@ -126,6 +136,22 @@ export default function ContactPage() {
             <div>
               <Label htmlFor="email">Email</Label>
               <Input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} />
+            </div>
+            <div>
+              <Label htmlFor="organization">Organization/Company</Label>
+              <Input type="text" id="organization" name="organization" value={formData.organization} onChange={handleChange} placeholder="University, Company, or Institution" />
+            </div>
+            <div>
+              <Label htmlFor="requestType">Purpose of Contact</Label>
+              <Select id="requestType" name="requestType" required value={formData.requestType} onChange={handleChange}>
+                <option value="">Select purpose...</option>
+                <option value="cv-request">CV Request</option>
+                <option value="academic-application">Academic Application Support</option>
+                <option value="job-opportunity">Job Opportunity</option>
+                <option value="research-collaboration">Research Collaboration</option>
+                <option value="consulting">Consulting Inquiry</option>
+                <option value="general-inquiry">General Inquiry</option>
+              </Select>
             </div>
             <div>
               <Label htmlFor="subject">Subject</Label>

@@ -139,14 +139,32 @@ interface ErrorStateProps {
   message: string;
 }
 
-const ErrorState = ({ message }: ErrorStateProps) => (
-  <div className="text-center py-8 col-span-full">
-    <p className="text-red-500 font-sans">Error: {message}</p>
+const ErrorState = (props: ErrorStateProps) => (
+  <div className="text-center py-12 col-span-full bg-card border border-border rounded-lg p-8">
+    <div className="text-4xl mb-4">🚀</div>
+    <h3 className="text-xl font-sans font-semibold text-foreground mb-3">
+      Future Open Source Contributions
+    </h3>
+    <p className="text-muted font-serif mb-4 max-w-md mx-auto">
+      I&apos;m actively developing projects and look forward to contributing to the open source community. Stay tuned for upcoming repositories and collaborations!
+    </p>
+    <p className="text-sm text-muted font-sans">
+      Connect with me to discuss potential collaborations
+    </p>
   </div>
 );
 
 const EmptyState = () => (
-  <div className="text-center py-8 col-span-full">
-    <p className="text-muted font-sans">No repositories found.</p>
+  <div className="text-center py-12 col-span-full bg-card border border-border rounded-lg p-8">
+    <div className="text-4xl mb-4">💻</div>
+    <h3 className="text-xl font-sans font-semibold text-foreground mb-3">
+      Building Something Great
+    </h3>
+    <p className="text-muted font-serif mb-4 max-w-md mx-auto">
+      Currently developing exciting projects that will be shared with the community soon. Innovation takes time, and great code is worth the wait!
+    </p>
+    <p className="text-sm text-muted font-sans">
+      Follow along for updates on upcoming releases
+    </p>
   </div>
 );

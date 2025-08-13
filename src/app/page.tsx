@@ -77,29 +77,34 @@ export default function Home() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button href="/projects">🚀 Explore My Work</Button>
-          <Button href="/About me/CV_of_Shah_Md_Jalal_Uddin.pdf" variant="secondary">📄 Download CV</Button>
+          <Button href="/contact" variant="secondary">📞 Get in Touch</Button>
         </div>
       </section>
 
-      {/* Credibility Indicators */}
-      <section className="max-w-4xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Card className="text-center p-4">
-            <div className="font-sans font-bold text-2xl text-primary">MS</div>
-            <div className="text-sm text-muted">Physical Chemistry</div>
+      {/* Education & Experience */}
+      <section>
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <Card className="text-center p-6">
+            <div className="font-sans font-bold text-2xl text-primary mb-2">BSc</div>
+            <div className="text-lg font-medium text-foreground mb-1">Chemistry</div>
+            <div className="text-sm text-muted">Academic Foundation</div>
           </Card>
-          <Card className="text-center p-4">
-            <div className="font-sans font-bold text-2xl text-primary">3+</div>
-            <div className="text-sm text-muted">Years Industry Exp.</div>
+          <Card className="text-center p-6">
+            <div className="font-sans font-bold text-2xl text-primary mb-2">MS</div>
+            <div className="text-lg font-medium text-foreground mb-1">Physical Chemistry</div>
+            <div className="text-sm text-muted">Advanced Research</div>
           </Card>
-          <Card className="text-center p-4">
-            <div className="font-sans font-bold text-2xl text-primary">10+</div>
-            <div className="text-sm text-muted">Projects Completed</div>
+          <Card className="text-center p-6">
+            <div className="font-sans font-bold text-2xl text-primary mb-2">3+</div>
+            <div className="text-lg font-medium text-foreground mb-1">Years Experience</div>
+            <div className="text-sm text-muted">Industry & Research</div>
           </Card>
-          <Card className="text-center p-4">
-            <div className="font-sans font-bold text-2xl text-primary">500+</div>
-            <div className="text-sm text-muted">Learning Hours</div>
-          </Card>
+        </div>
+        <div className="text-center">
+          <p className="text-lg text-muted font-serif mb-6 max-w-2xl mx-auto">
+            Combining strong academic foundations in chemistry with practical industry experience in computational modeling and scientific computing.
+          </p>
+          <Button href="/about">Learn More About Me</Button>
         </div>
       </section>
 
@@ -108,7 +113,7 @@ export default function Home() {
         <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-8 text-center">
           Featured Projects
         </h2>
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
           <Card>
             <h3 className="text-xl md:text-2xl font-sans font-semibold text-foreground mb-3">
               {EXTERNAL_PROJECTS.molecularAnalyzer.title}
@@ -135,8 +140,41 @@ export default function Home() {
                 <Tag key={tech}>{tech}</Tag>
               ))}
             </div>
-            <Button href="/projects">View All Projects</Button>
+            <Button href="/projects" variant="secondary">View Project Details</Button>
           </Card>
+        </div>
+        <div className="text-center">
+          <p className="text-lg text-muted font-serif mb-6 max-w-2xl mx-auto">
+            From computational chemistry tools to modern web applications, I create solutions that bridge scientific research with cutting-edge technology.
+          </p>
+          <Button href="/projects">Explore All Projects</Button>
+        </div>
+      </section>
+
+      {/* Learning Journey */}
+      <section>
+        <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-8 text-center">
+          Continuous Learning
+        </h2>
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
+          <Card className="text-center p-6">
+            <div className="font-sans font-bold text-2xl text-primary mb-2">Programming & Development</div>
+            <div className="text-sm text-muted">Python, JavaScript, TypeScript, Web Development</div>
+          </Card>
+          <Card className="text-center p-6">
+            <div className="font-sans font-bold text-2xl text-primary mb-2">Data Science & ML</div>
+            <div className="text-sm text-muted">Machine Learning, Deep Learning, Statistical Analysis</div>
+          </Card>
+          <Card className="text-center p-6">
+            <div className="font-sans font-bold text-2xl text-primary mb-2">Professional Skills</div>
+            <div className="text-sm text-muted">Digital Marketing, Excel, Business Analytics</div>
+          </Card>
+        </div>
+        <div className="text-center">
+          <p className="text-lg text-muted font-serif mb-6 max-w-2xl mx-auto">
+            500+ learning hours across 11 courses with 5 verified certificates. Committed to staying current with industry trends and emerging technologies.
+          </p>
+          <Button href="/learning">View Learning Journey</Button>
         </div>
       </section>
 

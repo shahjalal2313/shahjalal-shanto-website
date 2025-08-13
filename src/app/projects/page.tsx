@@ -146,6 +146,20 @@ export default function ProjectsPage() {
         <Card><GitHubRepos username="shahjalal-shanto" maxRepos={6} /></Card>
       </section>
 
+      {/* Call to Action - Strategic Learning & Contact Navigation */}
+      <section className="text-center bg-card border border-border rounded-lg p-10">
+        <h2 className="text-3xl font-sans font-bold text-foreground mb-4">
+          Interested in My Skills & Journey?
+        </h2>
+        <p className="text-xl text-muted font-serif mb-8 max-w-2xl mx-auto">
+          These projects represent continuous learning and growth. Explore my educational journey and let&apos;s discuss how we can collaborate on innovative solutions.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/learning">📚 View Learning Journey</Button>
+          <Button href="/contact" variant="secondary">🤝 Let&apos;s Collaborate</Button>
+        </div>
+      </section>
+
       {selectedProject && (
         <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       )}

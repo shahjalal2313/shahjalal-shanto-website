@@ -83,8 +83,8 @@ export default function AboutPage() {
             I am a chemistry professional at the intersection of academic theory, industrial application, and computational innovation. My journey through physical chemistry, steel manufacturing, and AI-assisted development has given me a unique, multidisciplinary approach to solving complex problems.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button href="/projects">Explore My Projects</Button>
-            <Button href="/contact" variant="secondary">Connect for Collaboration</Button>
+            <Button href="/contact">📄 Request CV</Button>
+            <Button href="/contact" variant="secondary">Get in Touch</Button>
           </div>
         </div>
       </section>
@@ -155,6 +155,20 @@ export default function AboutPage() {
             <p className="font-serif text-xl text-muted leading-relaxed">
               My vision is to be at the forefront of computational chemistry, developing innovative tools and methodologies that accelerate scientific discovery. I believe in a future where AI and traditional research are seamlessly integrated, and I am dedicated to building that future through interdisciplinary collaboration and continuous learning.
             </p>
+        </div>
+      </section>
+
+      {/* Call to Action - Strategic Project Navigation */}
+      <section className="text-center bg-card border border-border rounded-lg p-10">
+        <h2 className="text-3xl font-sans font-bold text-foreground mb-4">
+          See My Work in Action
+        </h2>
+        <p className="text-xl text-muted font-serif mb-8 max-w-2xl mx-auto">
+          Ready to explore how I apply these skills and experiences? Discover my projects that bridge chemistry, technology, and innovation.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/projects">🚀 Explore My Projects</Button>
+          <Button href="/contact" variant="secondary">Connect for Collaboration</Button>
         </div>
       </section>
 

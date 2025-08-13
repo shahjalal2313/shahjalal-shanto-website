@@ -19,20 +19,30 @@ const learningCategories = [
     category: 'Programming & Software Development',
     courses: [
       { title: 'Programming for Everybody (Getting Started with Python)', provider: 'Coursera (University of Michigan)', status: 'Completed', completionDate: 'Nov 2020', description: 'A foundational course on Python programming, covering variables, conditional logic, functions, and loops.', skills: ['Python', 'Programming Logic', 'Functions'], certificateUrl: 'https://coursera.org/share/73646e350c82357bd9f783105aa382ac', courseUrl: 'https://www.coursera.org/learn/python' },
-      { title: 'Python Data Structures', provider: 'Coursera (University of Michigan)', status: 'Completed', completionDate: 'Nov 2020', description: 'An exploration of Python’s core data structures, including lists, dictionaries, and tuples.', skills: ['Data Structures', 'Dictionaries', 'Tuples'], certificateUrl: 'https://coursera.org/share/17f68f6c8486854b1f63b73a5b6ff9e8', courseUrl: 'https://www.coursera.org/learn/python-data' },
+      { title: 'Python Data Structures', provider: 'Coursera (University of Michigan)', status: 'Completed', completionDate: 'Nov 2020', description: 'An exploration of Python core data structures, including lists, dictionaries, and tuples.', skills: ['Data Structures', 'Dictionaries', 'Tuples'], certificateUrl: 'https://coursera.org/share/17f68f6c8486854b1f63b73a5b6ff9e8', courseUrl: 'https://www.coursera.org/learn/python-data' },
       { title: '100 Days of Code: The Complete Python Pro Bootcamp', provider: 'Udemy', status: 'In Progress (58%)', completionDate: 'Ongoing', description: 'A project-based bootcamp covering a wide range of Python applications from web development to data science.', skills: ['Python', 'OOP', 'Pandas', 'Matplotlib'], certificateUrl: null, courseUrl: 'https://www.udemy.com/course/100-days-of-code/' },
     ],
   },
   {
     category: 'Data Science & Analytics',
     courses: [
+      { title: 'The Ultimate Pandas Bootcamp: Advanced Python Data Analysis', provider: 'Udemy', status: 'Completed', completionDate: 'Sep 2023', description: 'Advanced Pandas course covering data manipulation, cleaning, statistical analysis, and visualization with Python.', skills: ['Advanced Pandas', 'Data Manipulation', 'Data Cleaning', 'Statistical Analysis'], certificateUrl: 'https://www.udemy.com/certificate/UC-5eb9b10c-9263-4287-b709-5c2255750896/', courseUrl: 'https://www.udemy.com/course/the-ultimate-pandas-bootcamp-advanced-python-data-analysis/' },
+      { title: 'The Power of Statistics', provider: 'Coursera (Google)', status: 'Audited', completionDate: 'Feb 2024', description: 'Statistical analysis course covering hypothesis testing, probability distributions, and statistical inference with Python.', skills: ['Statistical Analysis', 'Hypothesis Testing', 'Probability Distributions', 'Statistical Inference'], certificateUrl: null, courseUrl: 'https://www.coursera.org/learn/the-power-of-statistics' },
       { title: 'The Data Science Course: Complete Data Science Bootcamp', provider: 'Udemy', status: 'In Progress (50%)', completionDate: 'Ongoing', description: 'A comprehensive bootcamp covering the full data science stack, from statistics to machine learning.', skills: ['Statistics', 'Probability', 'Hypothesis Testing'], certificateUrl: null, courseUrl: 'https://www.udemy.com/course/the-data-science-course-complete-data-science-bootcamp/' },
       { title: 'A Deep Understanding of Deep Learning', provider: 'Udemy', status: 'In Progress (31%)', completionDate: 'Ongoing', description: 'A course focusing on the mathematical and theoretical foundations of deep learning and neural networks.', skills: ['Deep Learning', 'PyTorch', 'Backpropagation'], certificateUrl: null, courseUrl: 'https://www.udemy.com/course/deeplearning_x/' },
       { title: 'Complete Machine Learning and Data Science: Zero to Mastery', provider: 'Udemy', status: 'In Progress (61%)', completionDate: 'Ongoing', description: 'A hands-on course focused on building real-world machine learning models with Scikit-learn.', skills: ['Machine Learning', 'Scikit-learn', 'Pandas'], certificateUrl: null, courseUrl: 'https://www.udemy.com/course/complete-machine-learning-and-data-science-zero-to-mastery/' },
+      { title: 'Intro to Machine Learning', provider: 'Kaggle Learn', status: 'Completed', completionDate: 'Feb 2024', description: 'Practical ML fundamentals with Iowa housing dataset, covering decision trees, random forests, and model validation.', skills: ['Decision Trees', 'Random Forests', 'Model Validation', 'Cross-Validation'], certificateUrl: null, courseUrl: 'https://www.kaggle.com/learn/intro-to-machine-learning' },
+    ],
+  },
+  {
+    category: 'Others',
+    courses: [
+      { title: 'Excel Skills for Business: Essentials', provider: 'Coursera (Macquarie University)', status: 'Completed', completionDate: 'Nov 2020', description: 'Foundational business Excel training covering navigation, formulas, formatting, and data visualization.', skills: ['Excel Navigation', 'Formula Writing', 'Data Visualization', 'Business Calculations'], certificateUrl: 'https://coursera.org/share/1adf4483166f86a45160ce8565cf13ca', courseUrl: 'https://www.coursera.org/learn/excel-essentials' },
+      { title: 'Meta Social Media Marketing', provider: 'Coursera (Meta)', status: 'Completed', completionDate: 'Jan 2021', description: 'Comprehensive digital marketing training covering Facebook Ads Manager, Instagram marketing, and social media strategy.', skills: ['Social Media Strategy', 'Facebook Ads Manager', 'Instagram Marketing', 'Content Creation'], certificateUrl: 'https://coursera.org/share/2676e5b0169cf9a01f4d10b3015e9857', courseUrl: 'https://www.coursera.org/professional-certificates/facebook-social-media-marketing' },
     ],
   },
 ];
-const learningStats = { totalCourses: 11, completedCourses: 6, inProgressCourses: 4, totalHours: 253, certificatesEarned: 5 };
+const learningStats = { totalCourses: 11, completedCourses: 6, inProgressCourses: 4, totalHours: 500, certificatesEarned: 5 };
 
 // --- Local, Reusable Components ---
 interface ButtonProps {
@@ -112,6 +122,20 @@ export default function LearningJourneyPage() {
           </div>
         </section>
       ))}
+
+      {/* Call to Action - Strategic About & Contact Navigation */}
+      <section className="text-center bg-card border border-border rounded-lg p-10">
+        <h2 className="text-3xl font-sans font-bold text-foreground mb-4">
+          Ready to Apply These Skills?
+        </h2>
+        <p className="text-xl text-muted font-serif mb-8 max-w-2xl mx-auto">
+          These skills and knowledge are actively applied in my professional work and research. Learn more about my background or let&apos;s discuss how we can collaborate.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button href="/about">👨‍🔬 My Professional Background</Button>
+          <Button href="/contact" variant="secondary">🤝 Discuss Collaboration</Button>
+        </div>
+      </section>
 
       {selectedCourse && <CourseModal course={selectedCourse} onClose={() => setSelectedCourse(null)} />}
     </div>
