@@ -20,22 +20,22 @@ const customComponents = {
 
   // Enhanced HTML elements
   h1: ({ children }: { children: React.ReactNode }) => (
-    <h1 className="text-4xl md:text-5xl font-sans font-bold text-foreground mb-8 mt-12 first:mt-0 leading-tight">
+    <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-bold text-foreground mb-6 sm:mb-8 mt-8 sm:mt-12 first:mt-0 leading-tight">
       {children}
     </h1>
   ),
   h2: ({ children }: { children: React.ReactNode }) => (
-    <h2 className="text-3xl md:text-4xl font-sans font-bold text-foreground mb-6 mt-10 leading-tight">
+    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sans font-bold text-foreground mb-4 sm:mb-6 mt-6 sm:mt-10 leading-tight">
       {children}
     </h2>
   ),
   h3: ({ children }: { children: React.ReactNode }) => (
-    <h3 className="text-2xl md:text-3xl font-sans font-semibold text-foreground mb-4 mt-8 leading-tight">
+    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-sans font-semibold text-foreground mb-3 sm:mb-4 mt-6 sm:mt-8 leading-tight">
       {children}
     </h3>
   ),
   h4: ({ children }: { children: React.ReactNode }) => (
-    <h4 className="text-xl md:text-2xl font-sans font-semibold text-foreground mb-3 mt-6">
+    <h4 className="text-base sm:text-lg md:text-xl lg:text-2xl font-sans font-semibold text-foreground mb-2 sm:mb-3 mt-4 sm:mt-6">
       {children}
     </h4>
   ),
@@ -46,19 +46,19 @@ const customComponents = {
   ),
   
   p: ({ children }: { children: React.ReactNode }) => (
-    <p className="font-serif text-lg text-muted leading-relaxed mb-6">
+    <p className="font-serif text-base sm:text-lg text-muted leading-relaxed mb-4 sm:mb-6">
       {children}
     </p>
   ),
   
   ul: ({ children }: { children: React.ReactNode }) => (
-    <ul className="font-serif text-lg text-muted leading-relaxed mb-6 list-disc list-inside space-y-2 ml-4">
+    <ul className="font-serif text-base sm:text-lg text-muted leading-relaxed mb-4 sm:mb-6 list-disc list-inside space-y-1 sm:space-y-2 ml-2 sm:ml-4">
       {children}
     </ul>
   ),
   
   ol: ({ children }: { children: React.ReactNode }) => (
-    <ol className="font-serif text-lg text-muted leading-relaxed mb-6 list-decimal list-inside space-y-2 ml-4">
+    <ol className="font-serif text-base sm:text-lg text-muted leading-relaxed mb-4 sm:mb-6 list-decimal list-inside space-y-1 sm:space-y-2 ml-2 sm:ml-4">
       {children}
     </ol>
   ),
@@ -68,8 +68,8 @@ const customComponents = {
   ),
   
   blockquote: ({ children }: { children: React.ReactNode }) => (
-    <blockquote className="border-l-4 border-primary pl-6 my-8 bg-primary/5 py-4 pr-4 rounded-r-lg">
-      <div className="font-serif text-lg text-muted italic">
+    <blockquote className="border-l-4 border-primary pl-3 sm:pl-6 my-6 sm:my-8 bg-primary/5 py-3 sm:py-4 pr-3 sm:pr-4 rounded-r-lg">
+      <div className="font-serif text-base sm:text-lg text-muted italic">
         {children}
       </div>
     </blockquote>
@@ -82,8 +82,8 @@ const customComponents = {
   ),
   
   pre: ({ children }: { children: React.ReactNode }) => (
-    <div className="bg-card border border-border rounded-lg p-6 my-8 overflow-x-auto">
-      <pre className="font-mono text-sm text-foreground">{children}</pre>
+    <div className="bg-card border border-border rounded-lg p-3 sm:p-6 my-6 sm:my-8 overflow-x-auto">
+      <pre className="font-mono text-xs sm:text-sm text-foreground">{children}</pre>
     </div>
   ),
   
@@ -115,21 +115,21 @@ const customComponents = {
   ),
   
   table: ({ children }: { children: React.ReactNode }) => (
-    <div className="overflow-x-auto my-8">
-      <table className="w-full border-collapse border border-border rounded-lg">
+    <div className="overflow-x-auto my-6 sm:my-8 -mx-2 sm:mx-0">
+      <table className="w-full border-collapse border border-border rounded-lg text-sm sm:text-base">
         {children}
       </table>
     </div>
   ),
   
   th: ({ children }: { children: React.ReactNode }) => (
-    <th className="border border-border bg-card px-4 py-3 text-left font-sans font-semibold text-foreground">
+    <th className="border border-border bg-card px-2 sm:px-4 py-2 sm:py-3 text-left font-sans font-semibold text-foreground text-sm sm:text-base">
       {children}
     </th>
   ),
   
   td: ({ children }: { children: React.ReactNode }) => (
-    <td className="border border-border px-4 py-3 font-serif text-muted">
+    <td className="border border-border px-2 sm:px-4 py-2 sm:py-3 font-serif text-muted text-sm sm:text-base">
       {children}
     </td>
   ),

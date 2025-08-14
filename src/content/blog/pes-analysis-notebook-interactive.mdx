@@ -1,0 +1,220 @@
+---
+title: "Interactive PES Analysis: Hands-On Guide with Python Notebooks"
+excerpt: "Learn how to analyze Potential Energy Surfaces using Python with our interactive Jupyter notebook. Parse computational chemistry data, visualize energy profiles, and create 3D PES plots."
+category: "computational-chemistry"
+publishedAt: "2025-01-20"
+updatedAt: "2025-01-20"
+tags: ["Potential Energy Surface", "Python", "Jupyter Notebook", "Data Analysis", "Computational Chemistry", "Visualization"]
+featured: true
+difficulty: "intermediate"
+readTime: 10
+interactive: true
+components: ["PESVisualization", "InteractiveChart"]
+series: "Computational Chemistry Tools"
+author:
+  name: "SHAH MD. JALAL UDDIN"
+  email: "Shahjalal2313@gmail.com"
+seo:
+  keywords: ["PES analysis", "computational chemistry", "python notebook", "data visualization", "energy surface", "molecular modeling"]
+  description: "Master PES analysis with our interactive Python notebook. Learn to parse computational chemistry data, visualize energy profiles, and create 3D PES plots."
+---
+
+# Interactive PES Analysis: Hands-On Guide with Python Notebooks
+
+In computational chemistry, understanding Potential Energy Surfaces (PES) is crucial for predicting molecular behavior and reaction mechanisms. This guide walks you through an interactive Jupyter notebook that demonstrates how to analyze and visualize PES using Python.
+
+<PESVisualization 
+  type="simple"
+  molecule="Generic"
+  description="Interactive visualization of a sample PES with minima and transition states"
+/>
+
+## Why Interactive Analysis Matters
+
+Traditional static analysis of PES has limitations. Interactive tools allow you to:
+
+- **Parse real computational chemistry data** from output files
+- **Visualize energy changes** in real-time
+- **Explore 3D energy landscapes** with interactive plots
+- **Customize analysis parameters** for your specific needs
+
+## Getting Started with the Notebook
+
+Our interactive notebook provides a complete environment for PES analysis. Here's what you'll find:
+
+### 1. Setup and Imports
+
+The notebook begins with the necessary Python libraries:
+
+```python
+# Install required packages
+!pip install -q cclib numpy matplotlib plotly
+
+# Import libraries
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.optimize import minimize
+import plotly.graph_objects as go
+```
+
+### 2. PES Analysis Functions
+
+The core functions handle data parsing and visualization:
+
+<InteractiveChart
+  type="code-example"
+  title="Key PES Analysis Functions"
+  data={{
+    functions: [
+      "analyze_pes_scan(file_content)",
+      "plot_pes_1d(scan_coordinate, energies)",
+      "create_3d_pes(x_range, y_range, energy_function)"
+    ]
+  }}
+/>
+
+### 3. Analyzing Your Own Data
+
+Upload your computational chemistry files (`.log`, `.out`) for analysis:
+
+```python
+# Upload and parse your data
+uploaded = files.upload()
+
+if uploaded:
+    file_name = next(iter(uploaded))
+    file_content = uploaded[file_name].decode('utf-8')
+    
+    rel_energies, coordinates = analyze_pes_scan(file_content)
+    
+    if rel_energies is not None:
+        scan_coordinate = np.arange(len(rel_energies))
+        plot_pes_1d(scan_coordinate, rel_energies)
+```
+
+## Interactive 3D Visualization
+
+One of the most powerful features is the ability to create interactive 3D PES plots:
+
+```python
+# Define a model energy function
+def model_energy_function(x, y):
+    return (x**2 + y**2 - 0.5 * x * y - 1)**2 + 0.1 * (x + y)
+
+# Create 3D visualization
+x_range = np.linspace(-2, 2, 50)
+y_range = np.linspace(-2, 2, 50)
+fig_3d = create_3d_pes(x_range, y_range, model_energy_function)
+fig_3d.show()
+```
+
+## Practical Applications
+
+This notebook is perfect for:
+
+1. **Students** learning computational chemistry concepts
+2. **Researchers** analyzing reaction pathways
+3. **Educators** demonstrating PES concepts in class
+4. **Practitioners** validating computational results
+
+## Access the Interactive Notebook
+
+To experience the full interactive capabilities, I've created a comprehensive Google Colab notebook that you can run directly in your browser:
+
+<div style={{
+  border: "1px solid var(--border)",
+  borderRadius: "var(--border-radius-lg)",
+  padding: "1.5em",
+  textAlign: "center",
+  backgroundColor: "var(--card)"
+}}>
+  <a
+    href="https://colab.research.google.com/drive/1b7pw6gidDZ_hBGL4v52gT4hRzEiSUHjT#scrollTo=-IJBh4ZbYtFA"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: "inline-block",
+      padding: "0.8em 1.5em",
+      backgroundColor: "var(--primary)",
+      color: "var(--primary-foreground)",
+      borderRadius: "var(--border-radius-md)",
+      textDecoration: "none",
+      fontWeight: "600"
+    }}
+  >
+    Open Interactive PES Notebook
+  </a>
+  <p style={{marginTop: "1em", fontSize: "0.9em", color: "var(--muted)"}}>
+    (This will open a new tab to Google Colab)
+  </p>
+</div>
+
+## How to Use the Notebook
+
+1. **Click the button** above to open the notebook in Google Colab
+2. **Run the setup cells** to install required packages
+3. **Upload your data** or use the example data provided
+4. **Execute analysis functions** to visualize your PES
+5. **Modify parameters** to explore different scenarios
+
+## Key Features Demonstrated
+
+### 1D PES Profile Analysis
+- Parse computational chemistry output files
+- Calculate relative energies in kcal/mol
+- Create publication-quality plots
+
+### 3D Energy Landscape Visualization
+- Interactive 3D surface plots
+- Color-coded energy values
+- Rotate and zoom capabilities
+
+### Custom Analysis Functions
+- Extensible code structure
+- Easy parameter modification
+- Clear visualization outputs
+
+## Benefits of This Approach
+
+Using our interactive notebook provides several advantages:
+
+1. **No Local Setup Required** - Everything runs in the cloud
+2. **Real Data Processing** - Analyze your actual computational results
+3. **Professional Visualizations** - High-quality plots for presentations
+4. **Educational Value** - Learn by doing with hands-on examples
+
+## Technical Implementation
+
+The notebook uses several powerful Python libraries:
+
+- **cclib** for parsing computational chemistry files
+- **NumPy** for numerical computations
+- **Matplotlib** for 2D plotting
+- **Plotly** for interactive 3D visualizations
+- **SciPy** for optimization functions
+
+## Future Enhancements
+
+We're continuously improving the notebook with features like:
+
+- Support for additional file formats
+- Advanced analysis algorithms
+- Integration with popular computational chemistry software
+- Machine learning-based PES predictions
+
+## Conclusion
+
+Interactive PES analysis transforms how we understand molecular systems. Our notebook provides a powerful yet accessible tool for students, researchers, and educators to explore potential energy surfaces in unprecedented detail.
+
+By combining computational power with interactive visualization, we can gain deeper insights into chemical reactions and molecular behavior. Try the notebook today and see how it can enhance your computational chemistry workflow!
+
+---
+
+*For more computational chemistry tools and resources, check out my [Molecular Analyzer project](https://molecularanalyzer.shahjalal-shanto.com) or explore other articles in the [Computational Chemistry series](/blog/category/computational-chemistry).*
+
+## Further Resources
+
+- [cclib Documentation](https://cclib.github.io/)
+- [Matplotlib Gallery](https://matplotlib.org/stable/gallery/index.html)
+- [Plotly Python Reference](https://plotly.com/python/)
+- [SciPy Documentation](https://docs.scipy.org/doc/scipy/)

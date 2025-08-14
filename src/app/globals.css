@@ -189,19 +189,112 @@ Prose Content Styles (for MDX)
   overflow-x: auto;
   font-size: 0.9em;
   white-space: pre-wrap;
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  padding: 1rem;
 }
 
 .prose-content code {
-  font-family: var(--font-mono), monospace; /* Assuming --font-mono is defined */
+  font-family: var(--font-mono), monospace;
+  background-color: var(--muted) / 0.1;
+  border: 1px solid var(--border);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  color: var(--foreground);
 }
 
 .prose-content pre code {
   background-color: transparent;
   border: none;
   padding: 0;
+  color: var(--foreground);
 }
 
 
+
+/* 
+============================================
+Mobile-First Blog Optimizations
+============================================
+*/
+
+/* Better mobile readability */
+@media (max-width: 640px) {
+  .prose-content {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .prose-content h2 {
+    font-size: 1.5rem; /* 24px */
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+  }
+  
+  .prose-content h3 {
+    font-size: 1.25rem; /* 20px */
+    margin-top: 1.25em;
+    margin-bottom: 0.5em;
+  }
+  
+  .prose-content p {
+    margin-bottom: 1em;
+  }
+  
+  .prose-content ul, .prose-content ol {
+    padding-left: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .prose-content li {
+    margin-bottom: 0.25em;
+  }
+  
+  .prose-content blockquote {
+    padding-left: 0.75em;
+    margin: 1em 0;
+  }
+  
+  .prose-content pre {
+    font-size: 0.8em;
+    padding: 0.75rem;
+    margin: 1em -0.5rem; /* Extend slightly beyond container */
+    border-radius: 0.5rem;
+  }
+  
+  .prose-content code {
+    font-size: 0.85em;
+    padding: 0.125rem 0.25rem;
+  }
+}
+
+/* Enhanced mobile touch targets */
+@media (max-width: 640px) {
+  button, .button, a[role="button"] {
+    min-height: 44px; /* iOS recommended touch target */
+    min-width: 44px;
+  }
+  
+  /* Better spacing for blog cards on mobile */
+  article {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Ensure code blocks don't break layout */
+  pre {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  
+  /* Better table handling on mobile */
+  table {
+    font-size: 0.875rem;
+  }
+  
+  th, td {
+    padding: 0.5rem 0.75rem;
+  }
+}
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
@@ -210,5 +303,20 @@ Prose Content Styles (for MDX)
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --border: #000000;
+    --muted: #000000;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --border: #ffffff;
+      --muted: #ffffff;
+    }
   }
 }

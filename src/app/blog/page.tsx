@@ -28,7 +28,7 @@ interface CardProps {
 }
 
 const Card = ({ children, className = '' }: CardProps) => (
-  <article className={`bg-card border border-border rounded-lg shadow-md p-6 flex flex-col h-full transition-shadow hover:shadow-lg ${className}`}>{children}</article>
+  <article className={`bg-card border border-border rounded-lg shadow-md p-4 sm:p-6 flex flex-col h-full transition-shadow hover:shadow-lg ${className}`}>{children}</article>
 );
 
 interface TagProps {
@@ -65,7 +65,7 @@ export default async function BlogPage() {
       {featuredPosts.length > 0 && (
         <section>
           <SectionTitle>Featured Articles</SectionTitle>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {featuredPosts.map((post) => <PostCard key={post.slug} post={post} />)}
           </div>
         </section>
@@ -74,7 +74,7 @@ export default async function BlogPage() {
       {otherPosts.length > 0 && (
         <section>
           <SectionTitle>More Articles</SectionTitle>
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {otherPosts.map((post) => <PostCard key={post.slug} post={post} layout="horizontal" />)}
           </div>
         </section>
@@ -100,7 +100,7 @@ interface PostCardProps {
 const PostCard = ({ post, layout = 'vertical' }: PostCardProps) => {
   if (layout === 'horizontal') {
     return (
-      <Card className="md:flex-row md:items-center">
+      <Card className="sm:flex-row sm:items-center">
         <div className="flex-grow">
           <p className="text-sm text-muted font-sans mb-2">{formatDate(post.publishedAt)} • {post.readingTime} min read</p>
           <h3 className="text-xl font-sans font-semibold text-foreground mb-2">
@@ -111,7 +111,7 @@ const PostCard = ({ post, layout = 'vertical' }: PostCardProps) => {
             {post.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
           </div>
         </div>
-        <Link href={`/blog/${post.slug}`} className="mt-4 md:mt-0 md:ml-6 text-primary font-sans font-semibold hover:underline flex-shrink-0">Read More →</Link>
+        <Link href={`/blog/${post.slug}`} className="mt-4 sm:mt-0 sm:ml-6 text-primary font-sans font-semibold hover:underline flex-shrink-0">Read More →</Link>
       </Card>
     );
   }
@@ -136,14 +136,14 @@ const PostCard = ({ post, layout = 'vertical' }: PostCardProps) => {
 };
 
 const NewsletterSignup = () => (
-  <Card className="items-center text-center p-8 md:p-12 bg-primary/5">
+  <Card className="items-center text-center p-6 sm:p-8 md:p-12 bg-primary/5">
     <h3 className="text-2xl font-sans font-bold text-foreground mb-2">Stay Updated</h3>
     <p className="text-muted font-serif mb-6 max-w-md">Get notified when new articles are published. No spam, just quality content.</p>
-    <form className="w-full max-w-md flex flex-col sm:flex-row gap-3">
+    <form className="w-full max-w-md flex flex-col xs:flex-row gap-3">
       <input 
         type="email" 
         placeholder="Enter your email"
-        className="flex-grow px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50"
+        className="flex-grow px-3 py-2 sm:px-4 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm sm:text-base"
         aria-label="Email for newsletter"
       />
       <Button>Subscribe</Button>
